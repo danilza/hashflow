@@ -1,0 +1,32 @@
+name: UITests
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  uitests:
+    runs-on: macos-14
+    env:
+      UITEST_SUPABASE_URL: ${{ secrets.UITEST_SUPABASE_URL }}
+      UITEST_SUPABASE_ANON_KEY: ${{ secrets.UITEST_SUPABASE_ANON_KEY }}
+      UITEST_SERVICE_KEY: ${{ secrets.UITEST_SERVICE_KEY }}
+      UITEST_WALLET_ADDRESS: ${{ secrets.UITEST_WALLET_ADDRESS }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.1"
+
+      - name: Run UI tests
+        run: |
+          set -euo pipefail
+          xcodebuild test \
+            -project new_experiment/new_experiment.xcodeproj \
+            -scheme new_experiment \
+            -destination 'platform=iOS Simulator,name=iPhone 15' \
+            -resultBundlePath TestResults.xcresult
