@@ -27,4 +27,11 @@ struct TestEnvironment {
             )
         }
     }
+
+    func validateOrDescribeError() -> String? {
+        if supabaseURL.isEmpty || anonKey.isEmpty || serviceKey.isEmpty {
+            return "Missing UITEST_SUPABASE_URL / UITEST_SUPABASE_ANON_KEY / UITEST_SERVICE_KEY"
+        }
+        return nil
+    }
 }

@@ -5,7 +5,12 @@ final class EconomySmokeScenario: XCTestCase {
     func testEconomySmoke() async throws {
         let logger = ScenarioLogger("ECONOMY_SMOKE")
         let env = TestEnvironment()
-        try env.validateOrThrow()
+        let envStep = logger.reserveStep()
+        if let error = env.validateOrDescribeError() {
+            logger.fail(step: envStep, description: "Validate test environment", expected: "UITEST_* secrets set", actual: error)
+            return
+        }
+        logger.success(step: envStep, description: "Validate test environment")
         let factory = TestUserFactory(baseURL: env.supabaseURL, anonKey: env.anonKey, serviceKey: env.serviceKey)
         let step0 = logger.reserveStep()
         let user: TestUser

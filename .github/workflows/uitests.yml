@@ -30,3 +30,10 @@ jobs:
             -scheme new_experimentUITests \
             -destination 'platform=iOS Simulator,name=iPhone SE (3rd generation),OS=17.5' \
             -resultBundlePath TestResults
+
+      - name: Upload TestResults
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestResults
+          path: TestResults
