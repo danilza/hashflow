@@ -8,15 +8,21 @@ func dismissIntroIfNeeded(_ app: XCUIApplication) {
 }
 
 func openFirstLevel(_ app: XCUIApplication) -> Bool {
-    let menuButton = app.buttons["menu_start_hacking"]
-    if !menuButton.waitForExistence(timeout: 20) { return false }
+    let menuButton = findElement(app, id: "menu_start_hacking")
+    if !menuButton.waitForExistence(timeout: 20) {
+        for _ in 0..<4 {
+            app.swipeUp()
+            if menuButton.waitForExistence(timeout: 3) { break }
+        }
+    }
+    guard menuButton.exists else { return false }
     menuButton.tap()
 
-    if !app.buttons["difficulty_easy"].waitForExistence(timeout: 10) {
+    let easyButton = findElement(app, id: "difficulty_easy")
+    if !easyButton.waitForExistence(timeout: 10) {
         let header = app.staticTexts["УРОВНИ"]
         guard header.waitForExistence(timeout: 10) else { return false }
     }
-    let easyButton = app.buttons["difficulty_easy"]
     if easyButton.exists {
         easyButton.tap()
     } else {
@@ -28,7 +34,10 @@ func openFirstLevel(_ app: XCUIApplication) -> Bool {
         }
     }
 
-    let levelButton = app.buttons["level_row_1"]
+    let easyNav = app.navigationBars["Обучающие"]
+    _ = easyNav.waitForExistence(timeout: 5)
+
+    let levelButton = findElement(app, id: "level_row_1")
     if levelButton.waitForExistence(timeout: 10) {
         levelButton.tap()
     } else {
@@ -75,6 +84,10 @@ func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
         if addShift.waitForExistence(timeout: 1) { return true }
     }
     return addShift.exists
+}
+
+private func findElement(_ app: XCUIApplication, id: String) -> XCUIElement {
+    app.descendants(matching: .any)[id]
 }
 
 func clearAndType(field: XCUIElement, value: String) {
