@@ -48,6 +48,13 @@ final class AuthSmokeScenario: XCTestCase {
             return
         }
         anonButton.tap()
+        let anonAlert = app.alerts["Точно анонимно?"]
+        if anonAlert.waitForExistence(timeout: 5) {
+            let confirm = anonAlert.buttons["Да, продолжить"]
+            if confirm.exists {
+                confirm.tap()
+            }
+        }
         logger.success(step: step2, description: "Anonymous login")
 
         let profileButton = app.buttons["profile_settings_button"]

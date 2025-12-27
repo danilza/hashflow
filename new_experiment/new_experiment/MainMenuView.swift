@@ -71,6 +71,7 @@ struct LevelListView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .terminalCard()
                     }
+                    .accessibilityIdentifier("difficulty_\(difficulty.id)")
                     .buttonStyle(.plain)
                 }
             }
@@ -163,6 +164,7 @@ struct LevelDifficultyListView: View, Identifiable {
             levelRowContent(level: level, canPlay: canPlay)
                 .opacity(canPlay ? 1 : 0.4)
         }
+        .accessibilityIdentifier("level_row_\(level.id)")
         .buttonStyle(.plain)
         .disabled(!canPlay)
     }
