@@ -17,7 +17,7 @@ final class TestUserFactory {
     private let serviceKey: String
 
     init(baseURL: String, anonKey: String, serviceKey: String) {
-        self.baseURL = baseURL
+        self.baseURL = Self.normalizeBaseURL(baseURL)
         self.anonKey = anonKey
         self.serviceKey = serviceKey
     }
@@ -41,7 +41,7 @@ final class TestUserFactory {
         let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 12, userInfo: [NSLocalizedDescriptionKey: "Fetch latest auth user failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 12, userInfo: [NSLocalizedDescriptionKey: "Fetch latest auth user failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
         let json = try JSONSerialization.jsonObject(with: data, options: [])
         if let dict = json as? [String: Any], let users = dict["users"] as? [[String: Any]] {
@@ -62,7 +62,7 @@ final class TestUserFactory {
         let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 13, userInfo: [NSLocalizedDescriptionKey: "Fetch economy failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 13, userInfo: [NSLocalizedDescriptionKey: "Fetch economy failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
         guard let item = json?.first,
@@ -82,7 +82,7 @@ final class TestUserFactory {
         let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 13, userInfo: [NSLocalizedDescriptionKey: "Fetch profile failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 13, userInfo: [NSLocalizedDescriptionKey: "Fetch profile failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
         return !(json ?? []).isEmpty
@@ -101,7 +101,7 @@ final class TestUserFactory {
         let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 14, userInfo: [NSLocalizedDescriptionKey: "Fetch access token failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 14, userInfo: [NSLocalizedDescriptionKey: "Fetch access token failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
         guard let accessToken = json?["access_token"] as? String,
@@ -121,7 +121,7 @@ final class TestUserFactory {
         let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 18, userInfo: [NSLocalizedDescriptionKey: "Fetch unique pipeline failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 18, userInfo: [NSLocalizedDescriptionKey: "Fetch unique pipeline failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]
         return json?.count ?? 0
@@ -142,7 +142,7 @@ final class TestUserFactory {
         let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 15, userInfo: [NSLocalizedDescriptionKey: "Admin create user failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 15, userInfo: [NSLocalizedDescriptionKey: "Admin create user failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
         let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
         guard let id = json?["id"] as? String else {
@@ -164,10 +164,10 @@ final class TestUserFactory {
             "username": username,
             "wallet_address": wallet
         ]], options: [])
-        let (_, response) = try await dataWithStatusRetry(for: request)
+        let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 16, userInfo: [NSLocalizedDescriptionKey: "Profile upsert failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 16, userInfo: [NSLocalizedDescriptionKey: "Profile upsert failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
     }
 
@@ -184,10 +184,10 @@ final class TestUserFactory {
             "daily_moves_left": dailyMovesLeft,
             "credit_balance": creditBalance
         ]], options: [])
-        let (_, response) = try await dataWithStatusRetry(for: request)
+        let (data, response) = try await dataWithStatusRetry(for: request)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 500
         guard status < 300 else {
-            throw NSError(domain: "UITest", code: 17, userInfo: [NSLocalizedDescriptionKey: "Player economy upsert failed (status \(status))"])
+            throw NSError(domain: "UITest", code: 17, userInfo: [NSLocalizedDescriptionKey: "Player economy upsert failed (status \(status)) url=\(url.absoluteString) body=\(responseBodyString(data))"])
         }
     }
 
@@ -203,5 +203,23 @@ final class TestUserFactory {
             }
         }
         throw lastError ?? NSError(domain: "UITest", code: 18, userInfo: [NSLocalizedDescriptionKey: "Request failed"])
+    }
+
+    private static func normalizeBaseURL(_ raw: String) -> String {
+        let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let url = URL(string: trimmed), let host = url.host else { return trimmed }
+        var comps = URLComponents()
+        comps.scheme = url.scheme
+        comps.host = host
+        comps.port = url.port
+        comps.path = ""
+        return comps.url?.absoluteString ?? trimmed
+    }
+
+    private func responseBodyString(_ data: Data) -> String {
+        guard !data.isEmpty else { return "<empty>" }
+        let raw = String(data: data, encoding: .utf8) ?? "<non-utf8>"
+        let trimmed = raw.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: "\r", with: " ")
+        return String(trimmed.prefix(500))
     }
 }

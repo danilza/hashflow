@@ -10,7 +10,7 @@ struct TestEnvironment {
 
     init() {
         let env = ProcessInfo.processInfo.environment
-        var resolvedURL = env["UITEST_SUPABASE_URL"] ?? ""
+        var resolvedURL = Self.normalizeBaseURL(env["UITEST_SUPABASE_URL"] ?? "")
         var resolvedAnonKey = env["UITEST_SUPABASE_ANON_KEY"] ?? ""
         var resolvedServiceKey = env["UITEST_SERVICE_KEY"] ?? ""
         let resolvedEmail = env["UITEST_EMAIL"]
@@ -19,7 +19,7 @@ struct TestEnvironment {
 
         if resolvedURL.isEmpty || resolvedAnonKey.isEmpty || resolvedServiceKey.isEmpty {
             if let filePayload = Self.loadSecretsFromBundle() {
-                if resolvedURL.isEmpty { resolvedURL = filePayload.supabaseURL }
+                if resolvedURL.isEmpty { resolvedURL = Self.normalizeBaseURL(filePayload.supabaseURL) }
                 if resolvedAnonKey.isEmpty { resolvedAnonKey = filePayload.anonKey }
                 if resolvedServiceKey.isEmpty { resolvedServiceKey = filePayload.serviceKey }
                 if resolvedWallet == "EQTEST_WALLET_ADDRESS", !filePayload.walletAddress.isEmpty {
@@ -58,6 +58,17 @@ struct TestEnvironment {
         guard let url = bundle.url(forResource: "UITestSecrets", withExtension: "json") else { return nil }
         guard let data = try? Data(contentsOf: url) else { return nil }
         return try? JSONDecoder().decode(FilePayload.self, from: data)
+    }
+
+    private static func normalizeBaseURL(_ raw: String) -> String {
+        let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let url = URL(string: trimmed), let host = url.host else { return trimmed }
+        var comps = URLComponents()
+        comps.scheme = url.scheme
+        comps.host = host
+        comps.port = url.port
+        comps.path = ""
+        return comps.url?.absoluteString ?? trimmed
     }
 }
 
