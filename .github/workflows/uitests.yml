@@ -29,7 +29,7 @@ jobs:
             -workspace new_experiment.xcworkspace \
             -scheme new_experimentUITests \
             -destination 'platform=iOS Simulator,name=iPhone SE (3rd generation),OS=17.5' \
-            -resultBundlePath TestResults
+            -resultBundlePath TestResults | tee xcodebuild.log
 
       - name: Upload TestResults
         if: always()
@@ -37,3 +37,10 @@ jobs:
         with:
           name: TestResults
           path: TestResults
+
+      - name: Upload xcodebuild log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-log
+          path: xcodebuild.log

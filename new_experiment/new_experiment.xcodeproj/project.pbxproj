@@ -294,7 +294,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -euo pipefail\npython3 - <<'PY'\nimport json\nimport os\n\nout_dir = os.path.join(os.environ[\"TARGET_BUILD_DIR\"], os.environ[\"UNLOCALIZED_RESOURCES_FOLDER_PATH\"])\nos.makedirs(out_dir, exist_ok=True)\npath = os.path.join(out_dir, \"UITestSecrets.json\")\n\npayload = {\n    \"UITEST_SUPABASE_URL\": os.environ.get(\"UITEST_SUPABASE_URL\", \"\"),\n    \"UITEST_SUPABASE_ANON_KEY\": os.environ.get(\"UITEST_SUPABASE_ANON_KEY\", \"\"),\n    \"UITEST_SERVICE_KEY\": os.environ.get(\"UITEST_SERVICE_KEY\", \"\"),\n    \"UITEST_WALLET_ADDRESS\": os.environ.get(\"UITEST_WALLET_ADDRESS\", \"\"),\n}\n\nwith open(path, \"w\", encoding=\"utf-8\") as handle:\n    json.dump(payload, handle)\nPY\n";
+			shellScript = "set -euo pipefail\n/usr/bin/python3 - <<'PY'\nimport json\nimport os\nimport sys\n\ntarget_build = os.environ.get(\"TARGET_BUILD_DIR\")\nresources_path = os.environ.get(\"UNLOCALIZED_RESOURCES_FOLDER_PATH\")\nif not target_build or not resources_path:\n    sys.exit(0)\n\nout_dir = os.path.join(target_build, resources_path)\nos.makedirs(out_dir, exist_ok=True)\npath = os.path.join(out_dir, \"UITestSecrets.json\")\n\npayload = {\n    \"UITEST_SUPABASE_URL\": os.environ.get(\"UITEST_SUPABASE_URL\", \"\"),\n    \"UITEST_SUPABASE_ANON_KEY\": os.environ.get(\"UITEST_SUPABASE_ANON_KEY\", \"\"),\n    \"UITEST_SERVICE_KEY\": os.environ.get(\"UITEST_SERVICE_KEY\", \"\"),\n    \"UITEST_WALLET_ADDRESS\": os.environ.get(\"UITEST_WALLET_ADDRESS\", \"\"),\n}\n\nwith open(path, \"w\", encoding=\"utf-8\") as handle:\n    json.dump(payload, handle)\nPY\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
