@@ -25,6 +25,7 @@ final class AuthSmokeScenario: XCTestCase {
 
         let app = XCUIApplication()
         app.launchEnvironment["UITEST_MODE"] = "1"
+        app.launchEnvironment["UITEST_FORCE_SIGNOUT"] = "1"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
         app.launchEnvironment["UITEST_SUPABASE_ANON_KEY"] = env.anonKey
         app.launchEnvironment["UITEST_SERVICE_KEY"] = env.serviceKey

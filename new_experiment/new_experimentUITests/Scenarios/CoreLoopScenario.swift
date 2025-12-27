@@ -123,7 +123,7 @@ final class CoreLoopScenario: XCTestCase {
 }
 
 private func configureLevelOnePipeline(_ app: XCUIApplication) -> Bool {
-    guard scrollToPipelineSection(app) else { return false }
+    guard ensurePipelineControlsVisible(app) else { return false }
     let addShift = app.buttons["pipeline_add_shift"]
     let addXor = app.buttons["pipeline_add_xor"]
     guard addShift.waitForExistence(timeout: 10) else { return false }

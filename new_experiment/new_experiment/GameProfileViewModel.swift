@@ -810,8 +810,19 @@ final class GameProfileViewModel: ObservableObject {
         }
     }
 
-private func bootstrapSupabase() async {
+    private func bootstrapSupabase() async {
         do {
+            if ProcessInfo.processInfo.environment["UITEST_MODE"] == "1",
+               ProcessInfo.processInfo.environment["UITEST_FORCE_SIGNOUT"] == "1" {
+                try? await SupabaseService.shared.client.auth.signOut()
+                await MainActor.run {
+                    self.remoteProfile = nil
+                    self.supabaseError = nil
+                    self.supabaseInfo = nil
+                    self.shouldPresentAuthSheet = true
+                }
+                return
+            }
             if ProcessInfo.processInfo.environment["UITEST_MODE"] == "1",
                let email = ProcessInfo.processInfo.environment["UITEST_EMAIL"],
                let password = ProcessInfo.processInfo.environment["UITEST_PASSWORD"] {

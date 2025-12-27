@@ -31,7 +31,7 @@ func openFirstLevel(_ app: XCUIApplication) -> Bool {
     if !levelCell.waitForExistence(timeout: 10) { return false }
     levelCell.tap()
 
-    if !scrollToPipelineSection(app) { return false }
+    if !ensurePipelineControlsVisible(app) { return false }
     let runButton = app.buttons["run_button"]
     return runButton.waitForExistence(timeout: 10)
 }
@@ -50,6 +50,23 @@ func scrollToPipelineSection(_ app: XCUIApplication) -> Bool {
         }
     }
     return pipelineSection.exists
+}
+
+func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
+    let addShift = app.buttons["pipeline_add_shift"]
+    if addShift.waitForExistence(timeout: 2) { return true }
+    let scrollView = app.scrollViews.firstMatch
+    if scrollView.exists {
+        for _ in 0..<8 {
+            scrollView.swipeUp()
+            if addShift.waitForExistence(timeout: 1) { return true }
+        }
+    }
+    for _ in 0..<6 {
+        app.swipeUp()
+        if addShift.waitForExistence(timeout: 1) { return true }
+    }
+    return addShift.exists
 }
 
 func clearAndType(field: XCUIElement, value: String) {
