@@ -96,9 +96,14 @@ func scrollToPipelineSection(_ app: XCUIApplication) -> Bool {
 }
 
 func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
-    let addShift = app.buttons["pipeline_add_shift"]
-    if addShift.waitForExistence(timeout: 2) { return true }
-    let scrollView = app.scrollViews.firstMatch
+    let addShift = elementById(app, "pipeline_add_shift")
+    if addShift.waitForExistence(timeout: 2) {
+        if addShift.isHittable { return true }
+        _ = scrollToMakeHittable(app, addShift)
+        return addShift.isHittable
+    }
+    let container = app.otherElements["level_play_view"]
+    let scrollView = container.scrollViews.firstMatch.exists ? container.scrollViews.firstMatch : app.scrollViews.firstMatch
     if scrollView.exists, scrollView.isHittable, scrollView.frame.height > 1 {
         for _ in 0..<8 {
             scrollView.swipeUp()
@@ -161,6 +166,14 @@ private func waitForAny(_ elements: [XCUIElement], timeout: TimeInterval) -> Boo
         RunLoop.current.run(until: Date().addingTimeInterval(0.2))
     }
     return elements.contains(where: { $0.exists })
+}
+
+private func elementById(_ app: XCUIApplication, _ id: String) -> XCUIElement {
+    app.descendants(matching: .any)[id]
+}
+
+func tapById(_ app: XCUIApplication, id: String, timeout: TimeInterval = 5) -> Bool {
+    tapElement(app, elementById(app, id), timeout: timeout)
 }
 
 func clearAndType(field: XCUIElement, value: String) {

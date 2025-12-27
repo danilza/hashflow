@@ -130,12 +130,8 @@ final class CoreLoopScenario: XCTestCase {
 
 private func configureLevelOnePipeline(_ app: XCUIApplication) -> Bool {
     guard ensurePipelineControlsVisible(app) else { return false }
-    let addShift = app.buttons["pipeline_add_shift"]
-    let addXor = app.buttons["pipeline_add_xor"]
-    guard addShift.waitForExistence(timeout: 10) else { return false }
-    addShift.tap()
-    guard addXor.waitForExistence(timeout: 10) else { return false }
-    addXor.tap()
+    guard tapById(app, id: "pipeline_add_shift", timeout: 10) else { return false }
+    guard tapById(app, id: "pipeline_add_xor", timeout: 10) else { return false }
 
     let shiftField = app.textFields["pipeline_shift_field"]
     let maskField = app.textFields["pipeline_mask_field"]

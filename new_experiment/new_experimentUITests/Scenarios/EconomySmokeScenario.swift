@@ -116,8 +116,5 @@ final class EconomySmokeScenario: XCTestCase {
 
 private func buildSingleNodePipeline(_ app: XCUIApplication) -> Bool {
     guard ensurePipelineControlsVisible(app) else { return false }
-    let addXor = app.buttons["pipeline_add_xor"]
-    guard addXor.waitForExistence(timeout: 10) else { return false }
-    addXor.tap()
-    return true
+    return tapById(app, id: "pipeline_add_xor", timeout: 10)
 }
