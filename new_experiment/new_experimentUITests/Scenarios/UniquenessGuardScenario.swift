@@ -44,8 +44,14 @@ final class UniquenessGuardScenario: XCTestCase {
         logger.success(step: step2, description: "Login")
 
         let step3 = logger.reserveStep()
-        if !openFirstLevel(app) {
-            logger.fail(step: step3, description: "Open level", expected: "Level screen opened", actual: "Level screen missing")
+        let openResult = openFirstLevel(app)
+        if !openResult.success {
+            logger.fail(
+                step: step3,
+                description: "Open level",
+                expected: "Level screen opened",
+                actual: openResult.failureReason ?? "Level screen missing"
+            )
             return
         }
         logger.success(step: step3, description: "Open level")

@@ -44,8 +44,14 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step2, description: "Login")
 
         let step3 = logger.reserveStep()
-        if !openFirstLevel(app) {
-            logger.fail(step: step3, description: "Open first available level", expected: "Level screen with run button", actual: "Level screen not opened")
+        let openResult = openFirstLevel(app)
+        if !openResult.success {
+            logger.fail(
+                step: step3,
+                description: "Open first available level",
+                expected: "Level screen with run button",
+                actual: openResult.failureReason ?? "Level screen not opened"
+            )
             return
         }
         logger.success(step: step3, description: "Open first available level")

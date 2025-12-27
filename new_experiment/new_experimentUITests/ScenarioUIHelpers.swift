@@ -1,6 +1,19 @@
 import Foundation
 import XCTest
 
+struct OpenLevelResult {
+    let success: Bool
+    let failureReason: String?
+
+    static func ok() -> OpenLevelResult {
+        OpenLevelResult(success: true, failureReason: nil)
+    }
+
+    static func fail(_ reason: String) -> OpenLevelResult {
+        OpenLevelResult(success: false, failureReason: reason)
+    }
+}
+
 func dismissIntroIfNeeded(_ app: XCUIApplication) {
     let closeButton = app.buttons["sheet_close"]
     if closeButton.waitForExistence(timeout: 2) {
@@ -8,13 +21,13 @@ func dismissIntroIfNeeded(_ app: XCUIApplication) {
     }
 }
 
-func openFirstLevel(_ app: XCUIApplication) -> Bool {
+func openFirstLevel(_ app: XCUIApplication) -> OpenLevelResult {
     if !tapAnyElement(app, [
         app.buttons["menu_start_hacking"],
         app.otherElements["menu_start_hacking"],
         app.staticTexts["START HACKING"]
     ], timeout: 20) {
-        return false
+        return .fail("menu_start_hacking not found or not tappable")
     }
 
     if !waitForAny([
@@ -22,7 +35,7 @@ func openFirstLevel(_ app: XCUIApplication) -> Bool {
         app.staticTexts["УРОВНИ"],
         app.buttons["difficulty_easy"]
     ], timeout: 10) {
-        return false
+        return .fail("level list view not visible after START HACKING")
     }
 
     if !tapAnyElement(app, [
@@ -30,14 +43,14 @@ func openFirstLevel(_ app: XCUIApplication) -> Bool {
         app.otherElements["difficulty_easy"],
         app.staticTexts["ОБУЧАЮЩИЕ"]
     ], timeout: 10) {
-        return false
+        return .fail("difficulty_easy not found or not tappable")
     }
 
     if !waitForAny([
         app.otherElements["level_difficulty_list_view"],
         app.navigationBars["Обучающие"]
     ], timeout: 10) {
-        return false
+        return .fail("difficulty list view not visible after choosing easy")
     }
 
     if !tapAnyElement(app, [
@@ -45,7 +58,7 @@ func openFirstLevel(_ app: XCUIApplication) -> Bool {
         app.otherElements["level_row_1"],
         app.staticTexts["Базовый уровень #1"]
     ], timeout: 10) {
-        return false
+        return .fail("level_row_1 not found or not tappable")
     }
 
     if !waitForAny([
@@ -53,12 +66,17 @@ func openFirstLevel(_ app: XCUIApplication) -> Bool {
         app.otherElements["info_panel"],
         app.buttons["run_button"]
     ], timeout: 10) {
-        return false
+        return .fail("level_play_view not visible after level tap")
     }
 
-    if !ensurePipelineControlsVisible(app) { return false }
+    if !ensurePipelineControlsVisible(app) {
+        return .fail("pipeline controls not visible")
+    }
     let runButton = app.buttons["run_button"]
-    return runButton.waitForExistence(timeout: 10)
+    if !runButton.waitForExistence(timeout: 10) {
+        return .fail("run_button missing")
+    }
+    return .ok()
 }
 
 func scrollToPipelineSection(_ app: XCUIApplication) -> Bool {
