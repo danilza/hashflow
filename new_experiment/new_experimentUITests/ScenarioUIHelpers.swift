@@ -1,3 +1,4 @@
+import Foundation
 import XCTest
 
 func dismissIntroIfNeeded(_ app: XCUIApplication) {
@@ -8,46 +9,53 @@ func dismissIntroIfNeeded(_ app: XCUIApplication) {
 }
 
 func openFirstLevel(_ app: XCUIApplication) -> Bool {
-    let menuButton = findElement(app, id: "menu_start_hacking")
-    if !menuButton.waitForExistence(timeout: 20) {
-        for _ in 0..<4 {
-            app.swipeUp()
-            if menuButton.waitForExistence(timeout: 3) { break }
-        }
-    }
-    guard menuButton.exists else { return false }
-    menuButton.tap()
-
-    let easyButton = findElement(app, id: "difficulty_easy")
-    if !easyButton.waitForExistence(timeout: 10) {
-        let header = app.staticTexts["УРОВНИ"]
-        guard header.waitForExistence(timeout: 10) else { return false }
-    }
-    if easyButton.exists {
-        easyButton.tap()
-    } else {
-        let easyFallback = app.buttons.containing(.staticText, identifier: "ОБУЧАЮЩИЕ").firstMatch
-        if easyFallback.exists {
-            easyFallback.tap()
-        } else {
-            return false
-        }
+    if !tapAnyElement(app, [
+        app.buttons["menu_start_hacking"],
+        app.otherElements["menu_start_hacking"],
+        app.staticTexts["START HACKING"]
+    ], timeout: 20) {
+        return false
     }
 
-    let easyNav = app.navigationBars["Обучающие"]
-    _ = easyNav.waitForExistence(timeout: 5)
-
-    let levelButton = findElement(app, id: "level_row_1")
-    if levelButton.waitForExistence(timeout: 10) {
-        levelButton.tap()
-    } else {
-        let levelCell = app.staticTexts["Базовый уровень #1"]
-        if !levelCell.waitForExistence(timeout: 10) { return false }
-        levelCell.tap()
+    if !waitForAny([
+        app.otherElements["level_list_view"],
+        app.staticTexts["УРОВНИ"],
+        app.buttons["difficulty_easy"]
+    ], timeout: 10) {
+        return false
     }
 
-    let infoPanel = app.otherElements["info_panel"]
-    guard infoPanel.waitForExistence(timeout: 10) else { return false }
+    if !tapAnyElement(app, [
+        app.buttons["difficulty_easy"],
+        app.otherElements["difficulty_easy"],
+        app.staticTexts["ОБУЧАЮЩИЕ"]
+    ], timeout: 10) {
+        return false
+    }
+
+    if !waitForAny([
+        app.otherElements["level_difficulty_list_view"],
+        app.navigationBars["Обучающие"]
+    ], timeout: 10) {
+        return false
+    }
+
+    if !tapAnyElement(app, [
+        app.buttons["level_row_1"],
+        app.otherElements["level_row_1"],
+        app.staticTexts["Базовый уровень #1"]
+    ], timeout: 10) {
+        return false
+    }
+
+    if !waitForAny([
+        app.otherElements["level_play_view"],
+        app.otherElements["info_panel"],
+        app.buttons["run_button"]
+    ], timeout: 10) {
+        return false
+    }
+
     if !ensurePipelineControlsVisible(app) { return false }
     let runButton = app.buttons["run_button"]
     return runButton.waitForExistence(timeout: 10)
@@ -86,8 +94,55 @@ func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
     return addShift.exists
 }
 
-private func findElement(_ app: XCUIApplication, id: String) -> XCUIElement {
-    app.descendants(matching: .any)[id]
+private func tapAnyElement(_ app: XCUIApplication, _ elements: [XCUIElement], timeout: TimeInterval) -> Bool {
+    for element in elements {
+        if tapElement(app, element, timeout: timeout) {
+            return true
+        }
+    }
+    return false
+}
+
+private func tapElement(_ app: XCUIApplication, _ element: XCUIElement, timeout: TimeInterval) -> Bool {
+    if !element.waitForExistence(timeout: timeout) {
+        return false
+    }
+    if !element.isHittable {
+        _ = scrollToMakeHittable(app, element)
+    }
+    guard element.isHittable else { return false }
+    element.tap()
+    return true
+}
+
+private func scrollToMakeHittable(_ app: XCUIApplication, _ element: XCUIElement) -> Bool {
+    let scrollView = app.scrollViews.firstMatch
+    if scrollView.exists {
+        for _ in 0..<6 {
+            if element.isHittable { return true }
+            scrollView.swipeUp()
+        }
+        for _ in 0..<3 {
+            if element.isHittable { return true }
+            scrollView.swipeDown()
+        }
+    }
+    for _ in 0..<3 {
+        if element.isHittable { return true }
+        app.swipeUp()
+    }
+    return element.isHittable
+}
+
+private func waitForAny(_ elements: [XCUIElement], timeout: TimeInterval) -> Bool {
+    let deadline = Date().addingTimeInterval(timeout)
+    while Date() < deadline {
+        if elements.contains(where: { $0.exists }) {
+            return true
+        }
+        RunLoop.current.run(until: Date().addingTimeInterval(0.2))
+    }
+    return elements.contains(where: { $0.exists })
 }
 
 func clearAndType(field: XCUIElement, value: String) {

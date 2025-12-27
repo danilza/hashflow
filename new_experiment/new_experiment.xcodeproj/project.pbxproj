@@ -164,7 +164,7 @@
 				830BA6C52EC7562300BBD6F1 /* Sources */,
 				830BA6C62EC7562300BBD6F1 /* Frameworks */,
 				830BA6C72EC7562300BBD6F1 /* Resources */,
-				7C1A66A1DEF14E98BD3CE2B4 /* Embed UITest secrets */,
+				7C1A66A1DEF14E98BD3CE2B4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +253,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C1A66A1DEF14E98BD3CE2B4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/UITestSecrets.json",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\n/usr/bin/python3 - <<'PY'\nimport json\nimport os\nimport sys\n\ntarget_build = os.environ.get(\"TARGET_BUILD_DIR\")\nresources_path = os.environ.get(\"UNLOCALIZED_RESOURCES_FOLDER_PATH\")\nif not target_build or not resources_path:\n    sys.exit(0)\n\nout_dir = os.path.join(target_build, resources_path)\nos.makedirs(out_dir, exist_ok=True)\npath = os.path.join(out_dir, \"UITestSecrets.json\")\n\npayload = {\n    \"UITEST_SUPABASE_URL\": os.environ.get(\"UITEST_SUPABASE_URL\", \"\"),\n    \"UITEST_SUPABASE_ANON_KEY\": os.environ.get(\"UITEST_SUPABASE_ANON_KEY\", \"\"),\n    \"UITEST_SERVICE_KEY\": os.environ.get(\"UITEST_SERVICE_KEY\", \"\"),\n    \"UITEST_WALLET_ADDRESS\": os.environ.get(\"UITEST_WALLET_ADDRESS\", \"\"),\n}\n\nwith open(path, \"w\", encoding=\"utf-8\") as handle:\n    json.dump(payload, handle)\nPY\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		830BA6AB2EC7562200BBD6F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,27 +297,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7C1A66A1DEF14E98BD3CE2B4 /* Embed UITest secrets */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/UITestSecrets.json",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -euo pipefail\n/usr/bin/python3 - <<'PY'\nimport json\nimport os\nimport sys\n\ntarget_build = os.environ.get(\"TARGET_BUILD_DIR\")\nresources_path = os.environ.get(\"UNLOCALIZED_RESOURCES_FOLDER_PATH\")\nif not target_build or not resources_path:\n    sys.exit(0)\n\nout_dir = os.path.join(target_build, resources_path)\nos.makedirs(out_dir, exist_ok=True)\npath = os.path.join(out_dir, \"UITestSecrets.json\")\n\npayload = {\n    \"UITEST_SUPABASE_URL\": os.environ.get(\"UITEST_SUPABASE_URL\", \"\"),\n    \"UITEST_SUPABASE_ANON_KEY\": os.environ.get(\"UITEST_SUPABASE_ANON_KEY\", \"\"),\n    \"UITEST_SERVICE_KEY\": os.environ.get(\"UITEST_SERVICE_KEY\", \"\"),\n    \"UITEST_WALLET_ADDRESS\": os.environ.get(\"UITEST_WALLET_ADDRESS\", \"\"),\n}\n\nwith open(path, \"w\", encoding=\"utf-8\") as handle:\n    json.dump(payload, handle)\nPY\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		830BA6C12EC7562300BBD6F1 /* PBXTargetDependency */ = {

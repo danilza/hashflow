@@ -77,6 +77,7 @@ struct LevelListView: View {
             }
             .padding(HFTheme.Spacing.l)
         }
+        .accessibilityIdentifier("level_list_view")
         .background(HFTheme.Colors.bgMain.ignoresSafeArea())
         .navigationBarBackButtonHidden(true)
         .applyToolbarBackground()
@@ -126,6 +127,7 @@ struct LevelDifficultyListView: View, Identifiable {
             }
         }
         .padding(HFTheme.Spacing.l)
+        .accessibilityIdentifier("level_difficulty_list_view")
         .background(HFTheme.Colors.bgMain.ignoresSafeArea())
         .navigationTitle(difficulty.displayName)
         .navigationBarBackButtonHidden(true)

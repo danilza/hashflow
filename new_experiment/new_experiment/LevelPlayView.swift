@@ -286,6 +286,7 @@ struct LevelPlayView: View {
         HackerBackgroundView {
             levelScroll
         }
+        .accessibilityIdentifier("level_play_view")
     }
 
     private var levelScroll: some View {
