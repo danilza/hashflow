@@ -54,7 +54,7 @@ struct TestEnvironment {
     }
 }
 
-private struct BundleLocator {}
+private final class BundleLocator {}
 
 private struct FilePayload: Decodable {
     let supabaseURL: String
