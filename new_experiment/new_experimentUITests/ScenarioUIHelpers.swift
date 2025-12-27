@@ -37,6 +37,8 @@ func openFirstLevel(_ app: XCUIApplication) -> Bool {
         levelCell.tap()
     }
 
+    let infoPanel = app.otherElements["info_panel"]
+    guard infoPanel.waitForExistence(timeout: 10) else { return false }
     if !ensurePipelineControlsVisible(app) { return false }
     let runButton = app.buttons["run_button"]
     return runButton.waitForExistence(timeout: 10)
@@ -62,13 +64,13 @@ func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
     let addShift = app.buttons["pipeline_add_shift"]
     if addShift.waitForExistence(timeout: 2) { return true }
     let scrollView = app.scrollViews.firstMatch
-    if scrollView.exists {
+    if scrollView.exists, scrollView.isHittable, scrollView.frame.height > 1 {
         for _ in 0..<8 {
             scrollView.swipeUp()
             if addShift.waitForExistence(timeout: 1) { return true }
         }
     }
-    for _ in 0..<6 {
+    for _ in 0..<8 {
         app.swipeUp()
         if addShift.waitForExistence(timeout: 1) { return true }
     }
