@@ -1,0 +1,5759 @@
+{
+  "_type" : {
+    "_name" : "ActionTestSummary",
+    "_supertype" : {
+      "_name" : "ActionTestSummaryIdentifiableObject",
+      "_supertype" : {
+        "_name" : "ActionAbstractTestSummary"
+      }
+    }
+  },
+  "activitySummaries" : {
+    "_type" : {
+      "_name" : "Array"
+    },
+    "_values" : [
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "attachments" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestAttachment"
+              },
+              "filename" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "kXCTAttachmentScreenRecording_0_AFA4C22C-C501-45BA-884C-8D5DAA6A9D27.mp4"
+              },
+              "lifetime" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "deleteOnSuccess"
+              },
+              "name" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "kXCTAttachmentScreenRecording"
+              },
+              "payloadRef" : {
+                "_type" : {
+                  "_name" : "Reference"
+                },
+                "id" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "0~9jvrB_YmjzOWufhyr5MzGOd_5UrB4j8IDuuMGh95ZIqFqrJLssoSTbj5shGvOqQkROqRjN1oIlL7U70XwgKNRg=="
+                }
+              },
+              "payloadSize" : {
+                "_type" : {
+                  "_name" : "Int"
+                },
+                "_value" : "9397253"
+              },
+              "timestamp" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:48.065+0300"
+              },
+              "uniformTypeIdentifier" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "public.mpeg-4"
+              },
+              "userInfo" : {
+                "_type" : {
+                  "_name" : "SortedKeyValueArray"
+                },
+                "storage" : {
+                  "_type" : {
+                    "_name" : "Array"
+                  },
+                  "_values" : [
+                    {
+                      "_type" : {
+                        "_name" : "SortedKeyValueArrayPair"
+                      },
+                      "key" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "initialDeviceOrientation"
+                      },
+                      "value" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "1"
+                      }
+                    },
+                    {
+                      "_type" : {
+                        "_name" : "SortedKeyValueArrayPair"
+                      },
+                      "key" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "initialInterfaceOrientation"
+                      },
+                      "value" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "1"
+                      }
+                    },
+                    {
+                      "_type" : {
+                        "_name" : "SortedKeyValueArrayPair"
+                      },
+                      "key" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "scale"
+                      },
+                      "value" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "3"
+                      }
+                    }
+                  ]
+                }
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "F71FD38A-384F-44A0-A09B-8200F192E93D"
+              }
+            }
+          ]
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:48.066+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:48.040+0300"
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Start Test at 2025-12-18 10:54:48.040"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "AFA4C22C-C501-45BA-884C-8D5DAA6A9D27"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:48.067+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:48.066+0300"
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Set Up"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "6EADFB0C-C636-4C66-BD06-B665651FDA08"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:48.078+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:48.067+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:48.078+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:48.074+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Wait for com.danila.hashflow to idle"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "B082E703-1BA7-4F46-A617-E50673736252"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Setting device orientation to Portrait"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "CDC7E5C1-A791-4BC0-B60C-882357B38BD2"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:51.614+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:48.476+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:51.614+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:48.477+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:49.540+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:48.478+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Terminate com.danila.hashflow:11467"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "33BCC55D-E3BB-4F99-82F8-EEEC4752D223"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:50.380+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:49.755+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Setting up automation session"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "12874A8E-1845-456E-A223-58328C1C9D18"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:50.608+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:50.380+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Wait for com.danila.hashflow to idle"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "EE245E63-AF5F-4CEC-911D-E31F8D9606DC"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Launch com.danila.hashflow"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "45E70DE7-7004-4DBB-9E38-7E88BB20BF2A"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Open com.danila.hashflow"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "1B236DD3-6A85-4348-9E1B-C11704201AB7"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:59.652+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:51.615+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_70EA2C1F-03F9-4080-A31E-F25C17FAA474.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:52.712+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "23D499A3-D2E7-4325-99AA-F08AF004FA4A"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:52.712+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:52.650+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:52.711+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:52.651+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "B476C629-9855-4E8B-9B75-68F4972C7995"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:52.712+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:52.712+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "4A3ABDF7-BBB3-461B-B3B3-4253C6E13AAF"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "70EA2C1F-03F9-4080-A31E-F25C17FAA474"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_71803025-F638-4FD4-8AE9-57B9DB6BF0D9.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:53.693+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "CDCF4F74-1C49-4A5A-B00D-4A9FB778FF53"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:53.693+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:53.647+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:53.692+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:53.648+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "8D724D10-69DF-4B71-968B-4FF413DB8E0F"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:53.693+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:53.693+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "AE2757A3-9572-43BA-B2AF-E5C77DA9987F"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "71803025-F638-4FD4-8AE9-57B9DB6BF0D9"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_FF902C2D-12B3-4BA8-BADE-F0A13076A465.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:54.658+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "7A0AF816-8577-4603-B9AC-41996BC15A53"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:54.658+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:54.625+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:54.657+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:54.626+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "6F6E8C84-090F-4745-851E-28DB1B7009B7"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:54.657+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:54.657+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "5BF2FA2F-4402-4D68-A487-E1FF238718A3"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "FF902C2D-12B3-4BA8-BADE-F0A13076A465"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_37EF89AD-7211-44D9-A15E-B6DE772D967F.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:55.732+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "4D8D215F-84E1-4F0E-95A0-581C05BB5A51"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:55.732+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:55.697+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:55.731+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:55.698+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "9F848C17-D4EE-47AB-A2A0-6E53C14D5556"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:55.732+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:55.731+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "37FC8C8D-A0C7-4297-B78C-4DF2E1F3BBD0"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "37EF89AD-7211-44D9-A15E-B6DE772D967F"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_36F53610-BA1B-49E3-A121-21E7A1DBD29A.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:56.696+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "9F4FDC57-4091-4ECF-A570-0EA3E04FEF79"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:56.696+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:56.660+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:56.696+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:56.661+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "DF7F06C2-2E77-4663-98D8-9F41737A5C59"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:56.696+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:56.696+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "DB1281C2-E1D2-40E4-93C6-ED1B1147AE86"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "36F53610-BA1B-49E3-A121-21E7A1DBD29A"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_9528C429-1B4E-4D31-95CD-2F8236485B15.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:57.661+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "8998AD29-B35E-4031-949E-877C899EAAB3"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:57.661+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:57.626+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:57.660+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:57.628+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "61E5155F-FF7C-4F7D-8D1D-D65778E2A84E"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:57.661+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:57.661+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "194ABA9B-A405-4457-8DAA-2BF5D68F63B7"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "9528C429-1B4E-4D31-95CD-2F8236485B15"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_E898E8FB-CE88-4104-BF69-605BDA3D30E2.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:58.735+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "8378E06F-C50C-47DD-9D62-2C2519119B22"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:58.736+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:58.697+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:58.735+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:58.698+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "6CD4C496-7FEB-48D1-8568-4857A041718D"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:58.735+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:58.735+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "17B2B442-BE94-4369-9DD7-C63772EE89B2"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "E898E8FB-CE88-4104-BF69-605BDA3D30E2"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`_0_C96FABD6-6D3B-4830-AD52-8087C76238E1.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"Начать майнить мозгом\" Button`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~5ABZhL7KlG1_YEiulRgpWjJjvusUkmaqSmaGbS-oMb2K1SLGfVZXNR5ivmxU5MG5R0etT0T-H0y99NnpAVza-Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "215"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:59.651+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "A53EBA46-DD0A-489B-9467-5FE240C111B3"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:59.651+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:59.620+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:59.651+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:59.621+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "4046E229-5EB0-4EA1-924C-639074D87AF9"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:59.651+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:54:59.651+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "34A803BD-B3D9-4586-A139-708F64B7EAB9"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"Начать майнить мозгом\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "C96FABD6-6D3B-4830-AD52-8087C76238E1"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Waiting 8.0s for \"Начать майнить мозгом\" Button to exist"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "76CBBDAD-1F96-41C1-A006-984589BDE9BD"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:59.672+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:59.652+0300"
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Checking existence of `\"Начать майнить мозгом\" Button`"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "2C9321BA-F5F6-4CB0-A919-20A04E5E0E92"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "attachments" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestAttachment"
+              },
+              "filename" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "App UI hierarchy for com.danila_0_10919FA7-F8D2-4AD3-BDDC-5A9BF76D1DA8.hashflow"
+              },
+              "lifetime" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "deleteOnSuccess"
+              },
+              "name" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "App UI hierarchy for com.danila.hashflow"
+              },
+              "payloadRef" : {
+                "_type" : {
+                  "_name" : "Reference"
+                },
+                "id" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "0~LB6CaNd9X_Ru9ypLzeKV_6-bbDSjuB71uEN3JCTxZ9ZEuLKDvrZsg4FZ_c7brL93_uqZcYj1mJ-oIUQnzess6Q=="
+                }
+              },
+              "payloadSize" : {
+                "_type" : {
+                  "_name" : "Int"
+                },
+                "_value" : "9781"
+              },
+              "timestamp" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:59.699+0300"
+              },
+              "uniformTypeIdentifier" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "public.plain-text"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "4F86777A-CC80-4A76-B1C2-E6285D00F0F0"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestAttachment"
+              },
+              "filename" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Snapshot_1_10919FA7-F8D2-4AD3-BDDC-5A9BF76D1DA8"
+              },
+              "inActivityIdentifier" : {
+                "_type" : {
+                  "_name" : "Int"
+                },
+                "_value" : "1"
+              },
+              "lifetime" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "deleteOnSuccess"
+              },
+              "name" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "kXCTAttachmentLegacySnapshot"
+              },
+              "payloadRef" : {
+                "_type" : {
+                  "_name" : "Reference"
+                },
+                "id" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "0~6P6v1cwnAZmgNanY90C5cvuWQJw6L1LSqd5zM4kle5478XDMVTs-X8NdvQdLZ4LWEutCnUkC__hCSYT57VT-9Q=="
+                }
+              },
+              "payloadSize" : {
+                "_type" : {
+                  "_name" : "Int"
+                },
+                "_value" : "39097"
+              },
+              "timestamp" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:59.699+0300"
+              },
+              "uniformTypeIdentifier" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.element-snapshot"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "FE0CF08F-AECB-47E5-8700-7B1A096B4759"
+              }
+            }
+          ]
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:59.702+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:59.672+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:59.698+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:54:59.673+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Requesting snapshot of accessibility hierarchy for app with pid 11522"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "73F5F8FD-B930-41EC-892F-65B2467BF358"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Collecting debug information to assist test failure triage"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "10919FA7-F8D2-4AD3-BDDC-5A9BF76D1DA8"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:00.774+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:54:59.702+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:00.773+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:00.734+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:00.773+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:00.736+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"profile_settings_button\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "F0045AA6-763A-4256-AA42-61B010C8015F"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"profile_settings_button\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "BB7DD47B-0FA0-42AE-A44C-97556B8A0521"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Waiting 40.0s for \"profile_settings_button\" Button to exist"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "62D7CB17-542A-4683-A2B2-F667E91A2746"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:01.839+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:00.774+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:01.839+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:01.809+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:01.839+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:01.809+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"menu_unique_solutions\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "1D0F86C5-3D8E-4614-94C5-EF0C31A935E6"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"menu_unique_solutions\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "D5BEF092-D528-45E6-BC61-8B0F0ECFE6A5"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Waiting 4.0s for \"menu_unique_solutions\" Button to exist"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "8CEEB95E-7496-4449-B950-255170539104"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:02.895+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:01.840+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.895+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.872+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:02.895+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:02.872+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"menu_unique_solutions\" Button`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "464D02DB-B5BE-44D1-BF57-5C9CACF549D5"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"menu_unique_solutions\" Button`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "48140FA6-49F4-4CC6-8E1B-BCDDAE362EB1"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Waiting 4.0s for \"menu_unique_solutions\" Button to exist"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "34DF03AF-1536-4EBB-9D62-EAE766664C45"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:03.599+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:02.895+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.898+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.895+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Wait for com.danila.hashflow to idle"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "7873060F-D789-407E-B491-443DA87F1CB6"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.914+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.898+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Find the \"menu_unique_solutions\" Button"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "AF7C9005-2640-41E0-950D-067744590B34"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.934+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.918+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Check for interrupting elements affecting \"menu_unique_solutions\" Button"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "47905E84-1EDE-4CE8-9030-06934469ADC4"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Snapshot_0_CE7315E8-4EE5-442B-8B8D-DEC1E8E1B796"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "kXCTAttachmentLegacySnapshot"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~6P6v1cwnAZmgNanY90C5cvuWQJw6L1LSqd5zM4kle5478XDMVTs-X8NdvQdLZ4LWEutCnUkC__hCSYT57VT-9Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "39097"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:02.936+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.element-snapshot"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "46E0951D-C747-4A38-B15E-C340DA7A44F5"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "SynthesizedEvent_1_CE7315E8-4EE5-442B-8B8D-DEC1E8E1B796"
+                    },
+                    "inActivityIdentifier" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "1"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "kXCTAttachmentLegacySynthesizedEvent"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~c0JqfXs4tdKaduQcMO0ssRfdBQlvldYyOeMXNxSVm1X1KPeZ2nJrqnJn8wNtVbWQWyMXB5-L1HmDYuIKhDAswg=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "1891"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:03.232+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.synthesized-event-record"
+                    },
+                    "userInfo" : {
+                      "_type" : {
+                        "_name" : "SortedKeyValueArray"
+                      },
+                      "storage" : {
+                        "_type" : {
+                          "_name" : "Array"
+                        },
+                        "_values" : [
+                          {
+                            "_type" : {
+                              "_name" : "SortedKeyValueArrayPair"
+                            },
+                            "key" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "DisplayID"
+                            },
+                            "value" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "1"
+                            }
+                          },
+                          {
+                            "_type" : {
+                              "_name" : "SortedKeyValueArrayPair"
+                            },
+                            "key" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "Scale"
+                            },
+                            "value" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "3"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "6A2961A0-A51C-496D-8E56-C16A1C43B1AF"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:03.232+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:02.935+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Synthesize event"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "CE7315E8-4EE5-442B-8B8D-DEC1E8E1B796"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:03.599+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:03.233+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Wait for com.danila.hashflow to idle"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "D35E765C-B256-45D6-A4DE-C27F8A46A576"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Tap \"menu_unique_solutions\" Button"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "98771148-C5E5-4E8E-85F8-CC0B4EF35879"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:04.677+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:03.599+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.677+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.634+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:04.677+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:04.635+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"UNIQUE SOLUTIONS\" StaticText`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "01919ACB-3ABD-46C3-BD7A-06502A21D628"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"UNIQUE SOLUTIONS\" StaticText`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "5E72B54F-5855-49E3-B1DF-B7ED9F28A6A2"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Waiting 6.0s for \"UNIQUE SOLUTIONS\" StaticText to exist"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "5B7D3E3C-8AFE-4899-B4DB-5DE442CB9B4C"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:05.611+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:04.678+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.681+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.678+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Wait for com.danila.hashflow to idle"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "6DA5EE99-8447-45EF-AFF2-E172592EDBCC"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.691+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.681+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Find the Target Application 'com.danila.hashflow'"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "973FEFCD-F960-4F05-BDB9-9ED34E5F5FF3"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.708+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.694+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Check for interrupting elements affecting \"Hash Flow\" Application"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "5305B8E9-5A3F-41F4-9180-34D32F03CDF3"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Snapshot_0_36155530-6421-49C9-AF7B-D265F0BC311A"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "kXCTAttachmentLegacySnapshot"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~1n2J4t-m7N1WKwm0MlOCppwnwjZG4zIoylq9dd7Wh5qT1U7SpSABderhHxBbqJAyfK98zay54oDuq_Ym72O1nA=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "1299"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:04.710+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.element-snapshot"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "0E660474-5534-4496-B8A6-4B115F46EF3F"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "SynthesizedEvent_1_36155530-6421-49C9-AF7B-D265F0BC311A"
+                    },
+                    "inActivityIdentifier" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "1"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "kXCTAttachmentLegacySynthesizedEvent"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~pxY6T1EtgYAcrwWn5APiXRYOm7KaB0jagRv_4twQrHJPncLWSEno360lcIdegjS32J7Ew25Xbdjp-PhVzfwu1Q=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "2071"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:05.126+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.synthesized-event-record"
+                    },
+                    "userInfo" : {
+                      "_type" : {
+                        "_name" : "SortedKeyValueArray"
+                      },
+                      "storage" : {
+                        "_type" : {
+                          "_name" : "Array"
+                        },
+                        "_values" : [
+                          {
+                            "_type" : {
+                              "_name" : "SortedKeyValueArrayPair"
+                            },
+                            "key" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "DisplayID"
+                            },
+                            "value" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "1"
+                            }
+                          },
+                          {
+                            "_type" : {
+                              "_name" : "SortedKeyValueArrayPair"
+                            },
+                            "key" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "Scale"
+                            },
+                            "value" : {
+                              "_type" : {
+                                "_name" : "String"
+                              },
+                              "_value" : "3"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "DF0BC108-33C1-40BC-A79C-68AF256C8E18"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:05.126+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:04.709+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Synthesize event"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "36155530-6421-49C9-AF7B-D265F0BC311A"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:05.610+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:05.126+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Wait for com.danila.hashflow to idle"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "2C5B820E-3A78-4A99-A626-0BEA52C91EE5"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Swipe down Target Application 'com.danila.hashflow'"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "688C6463-5DE0-4E13-8259-B38596BCC576"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.643+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:05.611+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_922BEC66-CD93-4D9F-BB9E-33CB79B1067B.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:06.684+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "91ECC9CB-272B-4007-B9C4-07B99F9251F6"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:06.684+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:06.651+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:06.683+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:06.652+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "C41007CD-1F55-48B5-A158-96AA120283B2"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:06.683+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:06.683+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "F3C01E5B-705B-48C0-ABFC-19AEE9122616"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "922BEC66-CD93-4D9F-BB9E-33CB79B1067B"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_00C3D313-BB5C-485E-AF8C-2F97FB8F5B8E.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:07.649+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "DD74B52F-E760-446A-810B-00695448C948"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:07.649+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:07.617+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:07.648+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:07.618+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "3BB3223D-F6E1-401E-9685-EC80948C5C7D"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:07.648+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:07.648+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "C143D127-F802-43F4-B5AD-BD3D5AE2C7AC"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "00C3D313-BB5C-485E-AF8C-2F97FB8F5B8E"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_9FED7D43-A9AC-400C-AFC7-F9AB7248C43B.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:08.720+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "1300721D-891C-4FCF-BF1E-5E924893351B"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:08.720+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:08.684+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:08.719+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:08.685+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "B5E1DCB1-0F2D-4D43-8339-7A7D7D404C4C"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:08.720+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:08.719+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "7C2B7BC7-4DBE-4BE4-9B5C-A59FDCB519F3"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "9FED7D43-A9AC-400C-AFC7-F9AB7248C43B"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_3FC0B042-D52F-4F8C-A327-C1A4DE13F0EF.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:09.672+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "196AF3EC-E4B7-4385-BE40-4C7D9F2B0AE7"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:09.672+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:09.642+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:09.671+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:09.644+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "831E6CF6-BAD2-4616-B709-5DD2C2F157CB"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:09.672+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:09.672+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "0EC6A7E6-1903-423E-8E46-FDE2063F8A2C"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "3FC0B042-D52F-4F8C-A327-C1A4DE13F0EF"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_E21EEC92-978D-41BA-83D4-683682DA653E.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:10.734+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "914EBD5C-FF09-4F76-91B9-184DE819B9AB"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:10.734+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:10.701+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:10.733+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:10.703+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "6060128F-D3EC-4870-8FA5-9A0D78C25737"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:10.734+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:10.733+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "3108A1D7-056C-4EAB-A13A-E053A532766F"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "E21EEC92-978D-41BA-83D4-683682DA653E"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_53C9FFA3-2B31-4381-BA2B-985130ED8450.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:11.697+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "EC992CF9-D6C1-4B27-8898-08DC4A5AEA6A"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:11.697+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:11.665+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:11.696+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:11.666+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "F7DAC5AC-3FD1-4E1A-BE25-8ABDB048FA28"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:11.697+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:11.696+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "BACBDD97-7EA2-4E34-8B2C-72E204D6637E"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "53C9FFA3-2B31-4381-BA2B-985130ED8450"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_D545D4DA-5C85-4F93-8097-7E61E5435B29.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:12.655+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "BED4DA38-ABA4-4465-95CF-F5A6EDAD0165"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:12.655+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:12.626+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:12.654+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:12.627+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "974F6D90-817A-4240-A79F-8A2F3A48F42B"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:12.655+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:12.654+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "E2A0257B-4EAB-4B5E-884C-C3BBED9BB96F"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "D545D4DA-5C85-4F93-8097-7E61E5435B29"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "attachments" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestAttachment"
+                    },
+                    "filename" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`_0_4F83C529-5D4A-40E9-A1B5-F037D501DEEA.txt"
+                    },
+                    "lifetime" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "deleteOnSuccess"
+                    },
+                    "name" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Debug description for `\"wallet_required_banner\" Other`"
+                    },
+                    "payloadRef" : {
+                      "_type" : {
+                        "_name" : "Reference"
+                      },
+                      "id" : {
+                        "_type" : {
+                          "_name" : "String"
+                        },
+                        "_value" : "0~ByVGcKs9rL9UbQuGx7pqfoc4AHXjMBhalDBVxmmk_ZhewBJhKh98-W7PJ66NzF7pnJlOrCJjEp-oSpmqElsQug=="
+                      }
+                    },
+                    "payloadSize" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "196"
+                    },
+                    "timestamp" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:13.643+0300"
+                    },
+                    "uniformTypeIdentifier" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "public.plain-text"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "E34B436A-559C-4D5B-906F-E7574031821A"
+                    }
+                  }
+                ]
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:13.643+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:13.617+0300"
+              },
+              "subactivities" : {
+                "_type" : {
+                  "_name" : "Array"
+                },
+                "_values" : [
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:13.642+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:13.618+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "984A34CD-0FDB-4671-930C-1A3B6B39FDE7"
+                    }
+                  },
+                  {
+                    "_type" : {
+                      "_name" : "ActionTestActivitySummary"
+                    },
+                    "activityType" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "com.apple.dt.xctest.activity-type.internal"
+                    },
+                    "finish" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:13.642+0300"
+                    },
+                    "start" : {
+                      "_type" : {
+                        "_name" : "Date"
+                      },
+                      "_value" : "2025-12-18T10:55:13.642+0300"
+                    },
+                    "title" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "Capturing element debug description"
+                    },
+                    "uuid" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "5DF69B65-973E-4A64-806C-BFECD61A3246"
+                    }
+                  }
+                ]
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Checking `Expect predicate `existsNoRetry == 1` for object \"wallet_required_banner\" Other`"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "4F83C529-5D4A-40E9-A1B5-F037D501DEEA"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Waiting 8.0s for \"wallet_required_banner\" Other to exist"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "13530BBA-C903-44B8-9415-37E0E5671485"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.661+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.643+0300"
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Checking existence of `\"wallet_required_banner\" Other`"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "4E04DC34-15D9-4745-9664-36888DE421BA"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "attachments" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestAttachment"
+              },
+              "filename" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "App UI hierarchy for com.danila_0_C2F6A46D-1E19-4749-80F9-72D878CEF6C2.hashflow"
+              },
+              "lifetime" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "deleteOnSuccess"
+              },
+              "name" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "App UI hierarchy for com.danila.hashflow"
+              },
+              "payloadRef" : {
+                "_type" : {
+                  "_name" : "Reference"
+                },
+                "id" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "0~g38x06gezA9vPy9hJtJWTuRJct_1koGU-6_IsHaTs7wnacllWPyoN9Wu26a8zPDhC5BjPICL5b0EbIAhExGHnQ=="
+                }
+              },
+              "payloadSize" : {
+                "_type" : {
+                  "_name" : "Int"
+                },
+                "_value" : "6067"
+              },
+              "timestamp" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:13.682+0300"
+              },
+              "uniformTypeIdentifier" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "public.plain-text"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "25389CC8-08C5-40C6-A969-F77150EC86C0"
+              }
+            },
+            {
+              "_type" : {
+                "_name" : "ActionTestAttachment"
+              },
+              "filename" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Snapshot_1_C2F6A46D-1E19-4749-80F9-72D878CEF6C2"
+              },
+              "inActivityIdentifier" : {
+                "_type" : {
+                  "_name" : "Int"
+                },
+                "_value" : "1"
+              },
+              "lifetime" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "deleteOnSuccess"
+              },
+              "name" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "kXCTAttachmentLegacySnapshot"
+              },
+              "payloadRef" : {
+                "_type" : {
+                  "_name" : "Reference"
+                },
+                "id" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "0~1n7VPdAzejbaeochXRpAZbvh-bYSB3NMN_9TZbzymS41qoMKbjd9weXJNVOEsWVgw5l_rq311bCxI63K9q71rA=="
+                }
+              },
+              "payloadSize" : {
+                "_type" : {
+                  "_name" : "Int"
+                },
+                "_value" : "26506"
+              },
+              "timestamp" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:13.682+0300"
+              },
+              "uniformTypeIdentifier" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.element-snapshot"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "0D759B25-9089-4184-8EF9-5E030581AE3E"
+              }
+            }
+          ]
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.684+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.661+0300"
+        },
+        "subactivities" : {
+          "_type" : {
+            "_name" : "Array"
+          },
+          "_values" : [
+            {
+              "_type" : {
+                "_name" : "ActionTestActivitySummary"
+              },
+              "activityType" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "com.apple.dt.xctest.activity-type.internal"
+              },
+              "finish" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:13.681+0300"
+              },
+              "start" : {
+                "_type" : {
+                  "_name" : "Date"
+                },
+                "_value" : "2025-12-18T10:55:13.661+0300"
+              },
+              "title" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "Requesting snapshot of accessibility hierarchy for app with pid 11522"
+              },
+              "uuid" : {
+                "_type" : {
+                  "_name" : "String"
+                },
+                "_value" : "8FBC5AC8-E97E-4E0E-900C-3E5FE2992314"
+              }
+            }
+          ]
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Collecting debug information to assist test failure triage"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "C2F6A46D-1E19-4749-80F9-72D878CEF6C2"
+        }
+      },
+      {
+        "_type" : {
+          "_name" : "ActionTestActivitySummary"
+        },
+        "activityType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "com.apple.dt.xctest.activity-type.internal"
+        },
+        "finish" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.722+0300"
+        },
+        "start" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.686+0300"
+        },
+        "title" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Tear Down"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "46C3C9E6-A32C-447A-81A2-489052374335"
+        }
+      }
+    ]
+  },
+  "duration" : {
+    "_type" : {
+      "_name" : "Double"
+    },
+    "_value" : "25.885348081588745"
+  },
+  "failureSummaries" : {
+    "_type" : {
+      "_name" : "Array"
+    },
+    "_values" : [
+      {
+        "_type" : {
+          "_name" : "ActionTestFailureSummary"
+        },
+        "fileName" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "\/Users\/danila\/Desktop\/new_experiment\/new_experiment\/new_experimentUITests\/new_experimentUITests.swift"
+        },
+        "issueType" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "Assertion Failure"
+        },
+        "isTopLevelFailure" : {
+          "_type" : {
+            "_name" : "Bool"
+          },
+          "_value" : "true"
+        },
+        "lineNumber" : {
+          "_type" : {
+            "_name" : "Int"
+          },
+          "_value" : "134"
+        },
+        "message" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "XCTAssertTrue failed"
+        },
+        "sourceCodeContext" : {
+          "_type" : {
+            "_name" : "SourceCodeContext"
+          },
+          "callStack" : {
+            "_type" : {
+              "_name" : "Array"
+            },
+            "_values" : [
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4360300056"
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4359881551"
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4359882079"
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4749981915"
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4749992679"
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354587023"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/Users\/danila\/Desktop\/new_experiment\/new_experiment\/new_experimentUITests\/new_experimentUITests.swift"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "134"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests.testWalletRequiredBannerAppearsWhenMissingWallet()"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354598660"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "@objc closure #1 in new_experimentUITests.testWalletRequiredBannerAppearsWhenMissingWallet()"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354691592"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "partial apply for @objc closure #1 in new_experimentUITests.testWalletRequiredBannerAppearsWhenMissingWallet()"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354699176"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "thunk for @escaping @callee_guaranteed @Sendable @async () -> ()"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354699524"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "partial apply for thunk for @escaping @callee_guaranteed @Sendable @async () -> ()"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354699744"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "thunk for @escaping @isolated(any) @callee_guaranteed @async () -> ()"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354700100"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "partial apply for thunk for @escaping @isolated(any) @callee_guaranteed @async () -> ()"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354700984"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "specialized thunk for @escaping @isolated(any) @callee_guaranteed @async () -> (@out A)"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "4354701312"
+                },
+                "symbolInfo" : {
+                  "_type" : {
+                    "_name" : "SourceCodeSymbolInfo"
+                  },
+                  "imageName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "new_experimentUITests"
+                  },
+                  "location" : {
+                    "_type" : {
+                      "_name" : "SourceCodeLocation"
+                    },
+                    "filePath" : {
+                      "_type" : {
+                        "_name" : "String"
+                      },
+                      "_value" : "\/<compiler-generated>"
+                    },
+                    "lineNumber" : {
+                      "_type" : {
+                        "_name" : "Int"
+                      },
+                      "_value" : "0"
+                    }
+                  },
+                  "symbolName" : {
+                    "_type" : {
+                      "_name" : "String"
+                    },
+                    "_value" : "partial apply for specialized thunk for @escaping @isolated(any) @callee_guaranteed @async () -> (@out A)"
+                  }
+                }
+              },
+              {
+                "_type" : {
+                  "_name" : "SourceCodeFrame"
+                },
+                "addressString" : {
+                  "_type" : {
+                    "_name" : "String"
+                  },
+                  "_value" : "9820686376"
+                }
+              }
+            ]
+          },
+          "location" : {
+            "_type" : {
+              "_name" : "SourceCodeLocation"
+            },
+            "filePath" : {
+              "_type" : {
+                "_name" : "String"
+              },
+              "_value" : "\/Users\/danila\/Desktop\/new_experiment\/new_experiment\/new_experimentUITests\/new_experimentUITests.swift"
+            },
+            "lineNumber" : {
+              "_type" : {
+                "_name" : "Int"
+              },
+              "_value" : "134"
+            }
+          }
+        },
+        "timestamp" : {
+          "_type" : {
+            "_name" : "Date"
+          },
+          "_value" : "2025-12-18T10:55:13.684+0300"
+        },
+        "uuid" : {
+          "_type" : {
+            "_name" : "String"
+          },
+          "_value" : "D5FF0055-07C7-4D03-93AB-9E2D1BE47CE6"
+        }
+      }
+    ]
+  },
+  "identifier" : {
+    "_type" : {
+      "_name" : "String"
+    },
+    "_value" : "new_experimentUITests\/testWalletRequiredBannerAppearsWhenMissingWallet()"
+  },
+  "identifierURL" : {
+    "_type" : {
+      "_name" : "String"
+    },
+    "_value" : "test:\/\/com.apple.xcode\/new_experiment\/new_experimentUITests\/new_experimentUITests\/testWalletRequiredBannerAppearsWhenMissingWallet"
+  },
+  "name" : {
+    "_type" : {
+      "_name" : "String"
+    },
+    "_value" : "testWalletRequiredBannerAppearsWhenMissingWallet()"
+  },
+  "testStatus" : {
+    "_type" : {
+      "_name" : "String"
+    },
+    "_value" : "Failure"
+  }
+}

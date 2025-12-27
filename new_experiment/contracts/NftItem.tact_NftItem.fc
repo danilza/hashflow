@@ -1,0 +1,238 @@
+#pragma version =0.4.6;
+#pragma allow-post-modification;
+#pragma compute-asm-ltr;
+
+;; NftItem.tact_NftItem.headers.fc
+;;
+;; Header files for NftItem
+;; NOTE: declarations are sorted for optimal order
+;;
+
+;; __tact_context_get_sender
+slice __tact_context_get_sender() inline;
+
+;; $NftItem$_store
+builder $NftItem$_store(builder build_0, (slice, int, int, slice, slice) v) inline;
+
+;; $NftItem$_load
+(slice, ((slice, int, int, slice, slice))) $NftItem$_load(slice sc_0) inline;
+
+;; $NftItem$init$_load
+(slice, ((int, slice, int, slice, slice))) $NftItem$init$_load(slice sc_0) inline;
+
+;; $NftItem$_contract_init
+(slice, int, int, slice, slice) $NftItem$_contract_init(int $index, slice $owner, int $pipeline_hash, slice $pipeline_raw, slice $collection) impure inline;
+
+;; $NftItem$_contract_load
+(slice, int, int, slice, slice) $NftItem$_contract_load() impure inline;
+
+;; $NftItem$_contract_store
+() $NftItem$_contract_store((slice, int, int, slice, slice) v) impure inline;
+
+
+;; NftItem.tact_NftItem.stdlib.fc
+global (int, slice, int, slice) __tact_context;
+global slice __tact_context_sender;
+global cell __tact_child_contract_codes;
+global int __tact_randomized;
+
+slice __tact_context_get_sender() inline {
+    return __tact_context_sender;
+}
+
+;; NftItem.tact_NftItem.storage.fc
+;;
+;; Type: NftItem
+;; TLB: _ owner:address index:int257 pipeline_hash:int257 pipeline_raw:^slice collection:address = NftItem
+;;
+
+builder $NftItem$_store(builder build_0, (slice, int, int, slice, slice) v) inline {
+    var (v'owner, v'index, v'pipeline_hash, v'pipeline_raw, v'collection) = v;
+    build_0 = build_0.store_slice(v'owner);
+    build_0 = build_0.store_int(v'index, 257);
+    build_0 = build_0.store_int(v'pipeline_hash, 257);
+    build_0 = build_0.store_builder_ref(begin_cell().store_slice(v'pipeline_raw));
+    var build_1 = begin_cell();
+    build_1 = build_1.store_slice(v'collection);
+    build_0 = store_builder_ref(build_0, build_1);
+    return build_0;
+}
+
+(slice, ((slice, int, int, slice, slice))) $NftItem$_load(slice sc_0) inline {
+    var v'owner = sc_0~load_msg_addr();
+    var v'index = sc_0~load_int(257);
+    var v'pipeline_hash = sc_0~load_int(257);
+    var v'pipeline_raw = sc_0~load_ref().begin_parse();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'collection = sc_1~load_msg_addr();
+    return (sc_0, (v'owner, v'index, v'pipeline_hash, v'pipeline_raw, v'collection));
+}
+
+(slice, ((int, slice, int, slice, slice))) $NftItem$init$_load(slice sc_0) inline {
+    var v'index = sc_0~load_int(257);
+    var v'owner = sc_0~load_msg_addr();
+    var v'pipeline_hash = sc_0~load_int(257);
+    var v'pipeline_raw = sc_0~load_ref().begin_parse();
+    slice sc_1 = sc_0~load_ref().begin_parse();
+    var v'collection = sc_1~load_msg_addr();
+    return (sc_0, (v'index, v'owner, v'pipeline_hash, v'pipeline_raw, v'collection));
+}
+
+(slice, int, int, slice, slice) $NftItem$_contract_load() impure inline {
+    slice $sc = get_data().begin_parse();
+    int $loaded = $sc~load_int(1);
+    if ($loaded) {
+        return $sc~$NftItem$_load();
+    }
+    else {
+        (int $index, slice $owner, int $pipeline_hash, slice $pipeline_raw, slice $collection) = $sc~$NftItem$init$_load();
+        $sc.end_parse();
+        return $NftItem$_contract_init($index, $owner, $pipeline_hash, $pipeline_raw, $collection);
+    }
+}
+
+() $NftItem$_contract_store((slice, int, int, slice, slice) v) impure inline {
+    builder b = begin_cell();
+    b = b.store_int(true, 1);
+    b = $NftItem$_store(b, v);
+    set_data(b.end_cell());
+}
+
+;;
+;; Contract NftItem functions
+;;
+
+(slice, int, int, slice, slice) $NftItem$_contract_init(int $index, slice $owner, int $pipeline_hash, slice $pipeline_raw, slice $collection) impure inline {
+    var (($self'owner, $self'index, $self'pipeline_hash, $self'pipeline_raw, $self'collection)) = (null(), null(), null(), null(), null());
+    $self'index = $index;
+    $self'owner = $owner;
+    $self'pipeline_hash = $pipeline_hash;
+    $self'pipeline_raw = $pipeline_raw;
+    $self'collection = $collection;
+    return ($self'owner, $self'index, $self'pipeline_hash, $self'pipeline_raw, $self'collection);
+}
+
+;;
+;; Get methods of a Contract NftItem
+;;
+
+;;
+;; Routing of a Contract NftItem
+;;
+
+;; message opcode reader utility: only binary receivers
+;; Returns 32 bit message opcode, otherwise throws the "Invalid incoming message" exit code
+(slice, int) ~load_opcode_internal(slice s) asm( -> 1 0) "32 LDUQ 130 THROWIFNOT";
+
+() recv_internal(int msg_value, cell in_msg_cell, slice in_msg) impure {
+    
+    ;; Context
+    var cs = in_msg_cell.begin_parse();
+    cs~skip_bits(2);
+    var msg_bounceable = cs~load_int(1);
+    var msg_bounced = cs~load_int(1);
+    slice msg_sender_addr = cs~load_msg_addr();
+    __tact_context = (msg_bounceable, msg_sender_addr, msg_value, cs);
+    __tact_context_sender = msg_sender_addr;
+    
+    ;; Load contract data
+    var ($self'owner, $self'index, $self'pipeline_hash, $self'pipeline_raw, $self'collection) = $NftItem$_contract_load();
+    
+    ;; Handle bounced messages
+    if (msg_bounced) { return (); }
+    var op = in_msg~load_opcode_internal();
+    ;; Receive Transfer message
+    if (op == 1294203785) {
+        var $msg'to = in_msg~load_msg_addr();
+        throw_unless(42629, ( equal_slices_bits(__tact_context_get_sender(), $self'owner) ));
+        $self'owner = $msg'to;
+        $NftItem$_contract_store(($self'owner, $self'index, $self'pipeline_hash, $self'pipeline_raw, $self'collection));
+        return ();
+    }
+    
+    ;; Throw if not handled
+    throw(130);
+}
+
+
+() __tact_selector_hack_asm() impure asm """
+@atend @ 1 {
+        execute current@ context@ current!
+        {
+            // The core idea of this function is to save gas by avoiding unnecessary dict jump, when recv_internal/recv_external is called
+            // We want to extract recv_internal/recv_external from the dict and select needed function
+            // not by jumping to the needed function by it's index, but by using usual IF statements.
+
+            }END> b> // Close previous builder, now we have a cell of previous code on top of the stack
+
+            <{ // Start of the new code builder
+                SETCP0
+                // Swap the new code builder with the previous code, now we have previous code on top of the stack
+                swap
+                // Transform cell to slice and load first ref from the previous code, now we have the dict on top of the stack
+                <s ref@
+
+                // Extract the recv_internal from the dict
+                dup 0 swap @procdictkeylen idict@ { "internal shortcut error" abort } ifnot
+                swap
+
+                // Delete the recv_internal from the dict
+                0 swap @procdictkeylen idict- drop
+                // Delete the recv_external from the dict (it's okay if it's not there)
+                -1 swap @procdictkeylen idict- drop
+                // Delete the __tact_selector_hack from the dict
+                65535 swap @procdictkeylen idict- drop
+
+                // Bring the code builder from the bottom of the stack
+                // because if recv_external extraction is optional, and the number of elements on the stack is not fixed
+                depth 1- roll
+                // Swap with the dict from which we extracted recv_internal and (maybe) recv_external
+                swap
+
+                // Check if the dict is empty
+                dup null?
+                // Store a copy of this flag in the bottom of the stack
+                dup depth 1- -roll
+                {
+                    // If the dict is empty, just drop it (it will be null if it's empty)
+                    drop
+                }
+                {
+                    // If the dict is not empty, prepare continuation to be stored in c3
+                    <{
+                        // Save this dict as first ref in this continuation, it will be pushed in runtime by DICTPUSHCONST
+                        swap @procdictkeylen DICTPUSHCONST
+                        // Jump to the needed function by it's index
+                        DICTIGETJMPZ
+                        // If such key is not found, throw 11 along with the key as an argument
+                        11 THROWARG
+                    }> PUSHCONT
+                    // Store the continuation in c3
+                    c3 POP
+                } cond
+
+                // Function id is on top of the (runtime) stack
+                DUP IFNOTJMP:<{
+                    // place recv_internal here
+                    DROP swap @addop
+                }>
+
+                // Bring back the flag, indicating if the dict is empty or not from the bottom of the stack
+                depth 1- roll
+                {
+                    // If the dict is empty, throw 11
+                    11 THROWARG
+                }
+                {
+                    // If the dict is not empty, jump to continuation from c3
+                    c3 PUSH JMPX
+                } cond
+            }> b>
+        } : }END>c
+        current@ context! current!
+    } does @atend !
+""";
+
+() __tact_selector_hack() method_id(65535) {
+    return __tact_selector_hack_asm();
+}

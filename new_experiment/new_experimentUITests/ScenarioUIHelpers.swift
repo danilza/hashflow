@@ -1,0 +1,43 @@
+import XCTest
+
+func dismissIntroIfNeeded(_ app: XCUIApplication) {
+    let closeButton = app.buttons["sheet_close"]
+    if closeButton.waitForExistence(timeout: 2) {
+        closeButton.tap()
+    }
+}
+
+func openFirstLevel(_ app: XCUIApplication) -> Bool {
+    let menuButton = app.buttons["menu_start_hacking"]
+    if !menuButton.waitForExistence(timeout: 20) { return false }
+    menuButton.tap()
+
+    let header = app.staticTexts["УРОВНИ"]
+    guard header.waitForExistence(timeout: 10) else { return false }
+
+    let easyButton = app.buttons.containing(.staticText, identifier: "ОБУЧАЮЩИЕ").firstMatch
+    if easyButton.exists {
+        easyButton.tap()
+    } else {
+        let easyText = app.staticTexts["ОБУЧАЮЩИЕ"]
+        if easyText.exists {
+            easyText.tap()
+        } else {
+            return false
+        }
+    }
+
+    let levelCell = app.staticTexts["Базовый уровень #1"]
+    if !levelCell.waitForExistence(timeout: 10) { return false }
+    levelCell.tap()
+
+    let runButton = app.buttons["run"]
+    return runButton.waitForExistence(timeout: 10)
+}
+
+func clearAndType(field: XCUIElement, value: String) {
+    field.tap()
+    let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: 10)
+    field.typeText(deleteString)
+    field.typeText(value)
+}

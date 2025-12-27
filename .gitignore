@@ -1,0 +1,17 @@
+DerivedData/
+TestResults/
+SourcePackages/
+**/.DS_Store
+*.xcresult
+TestResults_*.xcresult
+TestResults_*.json
+TestResults*.json
+node_modules/
+**/node_modules/
+*.log
+tmp/
+**/xcuserdata/
+**/*.xcuserstate
+**/.env.local
+supabase/.temp/
+**/supabase/.temp/

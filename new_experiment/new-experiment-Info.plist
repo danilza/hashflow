@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>supabase</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>supabase</string>
+			</array>
+		</dict>
+	</array>
+	<key>TONAPIEndpoint</key>
+	<string>https://testnet.tonapi.io/v2</string>
+	<key>TONCollectionAddress</key>
+	<string>EQBwNJq50EMUr_a4-q2gxIMb9Zl7kKKhJkHoCz302FtFXfKx</string>
+	<key>TONAPIKey</key>
+	<string>AEY7NMUWX2M7P4AAAAAALRASJ54JZG7OT7QTQZIFWE5GMHUZPKR7DPYNW2UOSME26VRWSRY</string>
+</dict>
+</plist>
