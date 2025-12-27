@@ -105,25 +105,25 @@ final class UniquenessGuardScenario: XCTestCase {
 }
 
 private func tapRunButton(_ app: XCUIApplication) -> Bool {
-    let runButton = app.buttons["run"]
+    let runButton = app.buttons["run_button"]
     guard runButton.waitForExistence(timeout: 10) else { return false }
     runButton.tap()
     return true
 }
 
 private func configureLevelOnePipeline(_ app: XCUIApplication) -> Bool {
-    let addShift = app.buttons["Add Shift"]
-    let addXor = app.buttons["Add XOR"]
+    guard scrollToPipelineSection(app) else { return false }
+    let addShift = app.buttons["pipeline_add_shift"]
+    let addXor = app.buttons["pipeline_add_xor"]
     guard addShift.waitForExistence(timeout: 10) else { return false }
     addShift.tap()
     guard addXor.waitForExistence(timeout: 10) else { return false }
     addXor.tap()
 
-    let fields = app.textFields
-    guard fields.count >= 2 else { return false }
-    let shiftField = fields.element(boundBy: 0)
-    let maskField = fields.element(boundBy: 1)
-    guard shiftField.exists, maskField.exists else { return false }
+    let shiftField = app.textFields["pipeline_shift_field"]
+    let maskField = app.textFields["pipeline_mask_field"]
+    guard shiftField.waitForExistence(timeout: 5),
+          maskField.waitForExistence(timeout: 5) else { return false }
     clearAndType(field: shiftField, value: "2")
     clearAndType(field: maskField, value: "92")
     return true

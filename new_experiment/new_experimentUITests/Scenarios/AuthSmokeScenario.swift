@@ -36,7 +36,13 @@ final class AuthSmokeScenario: XCTestCase {
 
         let anonButton = app.buttons["auth_anon_button"]
         let step2 = logger.reserveStep()
-        if !anonButton.waitForExistence(timeout: 25) {
+        if !anonButton.waitForExistence(timeout: 10) {
+            let openAuth = app.buttons["open_auth_sheet"]
+            if openAuth.waitForExistence(timeout: 5) {
+                openAuth.tap()
+            }
+        }
+        if !anonButton.waitForExistence(timeout: 20) {
             logger.fail(step: step2, description: "Anonymous login", expected: "auth_anon_button present", actual: "auth_anon_button missing")
             return
         }

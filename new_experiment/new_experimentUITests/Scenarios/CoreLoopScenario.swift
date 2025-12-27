@@ -68,7 +68,7 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step5, description: "Read economy before run")
 
         let step6 = logger.reserveStep()
-        let runButton = app.buttons["run"]
+        let runButton = app.buttons["run_button"]
         if !runButton.waitForExistence(timeout: 10) {
             logger.fail(step: step6, description: "Run pipeline", expected: "run button visible", actual: "run button missing")
             return
@@ -123,18 +123,18 @@ final class CoreLoopScenario: XCTestCase {
 }
 
 private func configureLevelOnePipeline(_ app: XCUIApplication) -> Bool {
-    let addShift = app.buttons["Add Shift"]
-    let addXor = app.buttons["Add XOR"]
+    guard scrollToPipelineSection(app) else { return false }
+    let addShift = app.buttons["pipeline_add_shift"]
+    let addXor = app.buttons["pipeline_add_xor"]
     guard addShift.waitForExistence(timeout: 10) else { return false }
     addShift.tap()
     guard addXor.waitForExistence(timeout: 10) else { return false }
     addXor.tap()
 
-    let fields = app.textFields
-    guard fields.count >= 2 else { return false }
-    let shiftField = fields.element(boundBy: 0)
-    let maskField = fields.element(boundBy: 1)
-    guard shiftField.exists, maskField.exists else { return false }
+    let shiftField = app.textFields["pipeline_shift_field"]
+    let maskField = app.textFields["pipeline_mask_field"]
+    guard shiftField.waitForExistence(timeout: 5),
+          maskField.waitForExistence(timeout: 5) else { return false }
 
     clearAndType(field: shiftField, value: "2")
     clearAndType(field: maskField, value: "92")

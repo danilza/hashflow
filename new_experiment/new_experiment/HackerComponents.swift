@@ -625,6 +625,7 @@ struct HackerMainMenuView: View {
                     )
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("open_auth_sheet")
             }
             Toggle("Хардкор режим", isOn: $profileVM.profile.hardcoreMode)
                 .toggleStyle(SwitchToggleStyle(tint: HFTheme.Colors.accent))

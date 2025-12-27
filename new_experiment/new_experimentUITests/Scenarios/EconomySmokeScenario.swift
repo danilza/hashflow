@@ -64,7 +64,7 @@ final class EconomySmokeScenario: XCTestCase {
             logger.fail(step: step5, description: "Perform one run", expected: "Pipeline built", actual: "Pipeline controls missing")
             return
         }
-        let runButton = app.buttons["run"]
+        let runButton = app.buttons["run_button"]
         if !runButton.waitForExistence(timeout: 10) {
             logger.fail(step: step5, description: "Perform one run", expected: "run button visible", actual: "run button missing")
             return
@@ -109,7 +109,8 @@ final class EconomySmokeScenario: XCTestCase {
 }
 
 private func buildSingleNodePipeline(_ app: XCUIApplication) -> Bool {
-    let addXor = app.buttons["Add XOR"]
+    guard scrollToPipelineSection(app) else { return false }
+    let addXor = app.buttons["pipeline_add_xor"]
     guard addXor.waitForExistence(timeout: 10) else { return false }
     addXor.tap()
     return true

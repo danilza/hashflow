@@ -57,7 +57,7 @@ struct NodeRowView: View {
                         .foregroundColor(HFTheme.Colors.accentDim)
                 } else {
                     VStack(alignment: .leading, spacing: HFTheme.Spacing.s) {
-                        terminalField(title: "Mask", text: $maskInput)
+                        terminalField(title: "Mask", text: $maskInput, identifier: "pipeline_mask_field")
                             .onChange(of: maskInput) { newValue in
                                 updateMask(from: newValue)
                                 showMaskPreview = !newValue.isEmpty
@@ -84,7 +84,7 @@ struct NodeRowView: View {
                         .foregroundColor(HFTheme.Colors.accentDim)
                 } else {
                     VStack(alignment: .leading, spacing: HFTheme.Spacing.s) {
-                        terminalField(title: "Shift", text: $shiftInput)
+                        terminalField(title: "Shift", text: $shiftInput, identifier: "pipeline_shift_field")
                             .onChange(of: shiftInput) { newValue in
                                 updateShift(from: newValue)
                                 showShiftPreview = !newValue.isEmpty
@@ -121,12 +121,12 @@ struct NodeRowView: View {
         }
     }
 
-    private func terminalField(title: String, text: Binding<String>) -> some View {
+    private func terminalField(title: String, text: Binding<String>, identifier: String? = nil) -> some View {
         VStack(alignment: .leading, spacing: HFTheme.Spacing.xs) {
             Text(title.uppercased())
                 .terminalText(12)
                 .foregroundColor(HFTheme.Colors.accentDim)
-            TextField("0", text: Binding(
+            let field = TextField("0", text: Binding(
                 get: { text.wrappedValue },
                 set: { newValue in
                     text.wrappedValue = newValue.filter { $0.isNumber }
@@ -141,6 +141,12 @@ struct NodeRowView: View {
                     .stroke(HFTheme.Colors.accent.opacity(0.4), lineWidth: 1)
             )
             .onDrop(of: [.text], isTargeted: nil) { _ in false }
+
+            if let identifier, !identifier.isEmpty {
+                field.accessibilityIdentifier(identifier)
+            } else {
+                field
+            }
         }
     }
 

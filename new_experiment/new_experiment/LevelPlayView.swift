@@ -503,6 +503,7 @@ struct LevelPlayView: View {
                     HackerHaptics.light()
                 }
                 .disabled(showSuccess || isPipelineFrozen)
+                .accessibilityIdentifier("pipeline_add_xor")
                 pipelineControlButton(icon: "arrow.left.and.right", title: "Add Shift") {
                     withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
                         graphVM.addShiftLeftNode()
@@ -510,6 +511,7 @@ struct LevelPlayView: View {
                     HackerHaptics.light()
                 }
                 .disabled(showSuccess || isPipelineFrozen)
+                .accessibilityIdentifier("pipeline_add_shift")
             }
         }
         .padding(.horizontal, HFTheme.Spacing.m)
@@ -797,6 +799,7 @@ struct LevelPlayView: View {
             .cornerRadius(14)
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("run_button")
         .scaleEffect(runButtonPressed ? 0.97 : 1)
         .disabled(isPipelineFrozen || isRunInFlight)
     }
