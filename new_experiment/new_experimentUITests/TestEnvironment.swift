@@ -10,23 +10,30 @@ struct TestEnvironment {
 
     init() {
         let env = ProcessInfo.processInfo.environment
-        supabaseURL = env["UITEST_SUPABASE_URL"] ?? ""
-        anonKey = env["UITEST_SUPABASE_ANON_KEY"] ?? ""
-        serviceKey = env["UITEST_SERVICE_KEY"] ?? ""
-        email = env["UITEST_EMAIL"]
-        password = env["UITEST_PASSWORD"]
-        walletAddress = env["UITEST_WALLET_ADDRESS"] ?? "EQTEST_WALLET_ADDRESS"
+        var resolvedURL = env["UITEST_SUPABASE_URL"] ?? ""
+        var resolvedAnonKey = env["UITEST_SUPABASE_ANON_KEY"] ?? ""
+        var resolvedServiceKey = env["UITEST_SERVICE_KEY"] ?? ""
+        let resolvedEmail = env["UITEST_EMAIL"]
+        let resolvedPassword = env["UITEST_PASSWORD"]
+        var resolvedWallet = env["UITEST_WALLET_ADDRESS"] ?? "EQTEST_WALLET_ADDRESS"
 
-        if supabaseURL.isEmpty || anonKey.isEmpty || serviceKey.isEmpty {
+        if resolvedURL.isEmpty || resolvedAnonKey.isEmpty || resolvedServiceKey.isEmpty {
             if let filePayload = Self.loadSecretsFromBundle() {
-                supabaseURL = filePayload.supabaseURL.isEmpty ? supabaseURL : filePayload.supabaseURL
-                anonKey = filePayload.anonKey.isEmpty ? anonKey : filePayload.anonKey
-                serviceKey = filePayload.serviceKey.isEmpty ? serviceKey : filePayload.serviceKey
-                if walletAddress == "EQTEST_WALLET_ADDRESS", !filePayload.walletAddress.isEmpty {
-                    walletAddress = filePayload.walletAddress
+                if resolvedURL.isEmpty { resolvedURL = filePayload.supabaseURL }
+                if resolvedAnonKey.isEmpty { resolvedAnonKey = filePayload.anonKey }
+                if resolvedServiceKey.isEmpty { resolvedServiceKey = filePayload.serviceKey }
+                if resolvedWallet == "EQTEST_WALLET_ADDRESS", !filePayload.walletAddress.isEmpty {
+                    resolvedWallet = filePayload.walletAddress
                 }
             }
         }
+
+        supabaseURL = resolvedURL
+        anonKey = resolvedAnonKey
+        serviceKey = resolvedServiceKey
+        email = resolvedEmail
+        password = resolvedPassword
+        walletAddress = resolvedWallet
     }
 
     func validateOrThrow() throws {
