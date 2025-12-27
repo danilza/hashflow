@@ -20,6 +20,7 @@ final class EconomySmokeScenario: XCTestCase {
         let app = XCUIApplication()
         app.launchEnvironment["UITEST_MODE"] = "1"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
+        app.launchEnvironment["UITEST_SUPABASE_ANON_KEY"] = env.anonKey
         app.launchEnvironment["UITEST_SERVICE_KEY"] = env.serviceKey
         app.launchEnvironment["UITEST_EMAIL"] = user.email
         app.launchEnvironment["UITEST_PASSWORD"] = user.password

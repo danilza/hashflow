@@ -118,8 +118,20 @@ actor SupabaseService {
     private let supabaseURLString: String
 
     init() {
-        supabaseURLString = "https://mspqeumqitcomagyorvw.supabase.co"
-        supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1zcHFldW1xaXRjb21hZ3lvcnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ4NTA4NjEsImV4cCI6MjA4MDQyNjg2MX0.jF1sgazizAVPFwEmyJs_Dd_Wx31Mromg5iEVIcnB1xs"
+        let env = ProcessInfo.processInfo.environment
+        let isUITest = env["UITEST_MODE"] == "1"
+        let defaultURL = "https://mspqeumqitcomagyorvw.supabase.co"
+        let defaultKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1zcHFldW1xaXRjb21hZ3lvcnZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ4NTA4NjEsImV4cCI6MjA4MDQyNjg2MX0.jF1sgazizAVPFwEmyJs_Dd_Wx31Mromg5iEVIcnB1xs"
+        if isUITest {
+            let overrideURL = env["UITEST_SUPABASE_URL"] ?? ""
+            let overrideKey = env["UITEST_SUPABASE_ANON_KEY"] ?? ""
+            supabaseURLString = overrideURL.isEmpty ? defaultURL : overrideURL
+            supabaseKey = overrideKey.isEmpty ? defaultKey : overrideKey
+            print("SupabaseService UITEST_MODE url:", supabaseURLString)
+        } else {
+            supabaseURLString = defaultURL
+            supabaseKey = defaultKey
+        }
         client = SupabaseClient(
             supabaseURL: URL(string: supabaseURLString)!,
             supabaseKey: supabaseKey,
