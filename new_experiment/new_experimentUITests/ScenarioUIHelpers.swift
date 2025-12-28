@@ -70,6 +70,10 @@ func openFirstLevel(_ app: XCUIApplication) -> OpenLevelResult {
     }
 
     if !ensurePipelineControlsVisible(app) {
+        let header = elementById(app, "pipeline_header")
+        if header.exists {
+            return .fail("pipeline_header visible but controls not hittable")
+        }
         return .fail("pipeline controls not visible")
     }
     let runButton = app.buttons["run_button"]
@@ -96,14 +100,22 @@ func scrollToPipelineSection(_ app: XCUIApplication) -> Bool {
 }
 
 func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
+    let header = elementById(app, "pipeline_header")
+    if header.waitForExistence(timeout: 2), header.isHittable {
+        let addShift = elementById(app, "pipeline_add_shift")
+        if addShift.waitForExistence(timeout: 2) {
+            if addShift.isHittable { return true }
+            _ = scrollToMakeHittable(app, addShift)
+            return addShift.isHittable
+        }
+    }
     let addShift = elementById(app, "pipeline_add_shift")
     if addShift.waitForExistence(timeout: 2) {
         if addShift.isHittable { return true }
         _ = scrollToMakeHittable(app, addShift)
         return addShift.isHittable
     }
-    let container = app.otherElements["level_play_view"]
-    let scrollView = container.scrollViews.firstMatch.exists ? container.scrollViews.firstMatch : app.scrollViews.firstMatch
+    let scrollView = app.scrollViews["level_scroll_view"].exists ? app.scrollViews["level_scroll_view"] : app.scrollViews.firstMatch
     if scrollView.exists, scrollView.isHittable, scrollView.frame.height > 1 {
         for _ in 0..<8 {
             scrollView.swipeUp()

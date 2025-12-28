@@ -73,6 +73,7 @@ struct LevelPlayView: View {
                     .padding(.top, HFTheme.Spacing.l)
                     .padding(.bottom, HFTheme.Spacing.l + keyboardObserver.keyboardHeight)
             }
+            .accessibilityIdentifier("level_scroll_view")
             .onChange(of: graphVM.nodes.count) { _ in
                 withAnimation(.spring(response: 0.45, dampingFraction: 0.85)) {
                     proxy.scrollTo(pipelineAnchor, anchor: .bottom)
@@ -95,6 +96,7 @@ struct LevelPlayView: View {
                 .padding(.top, HFTheme.Spacing.l)
                 .padding(.bottom, HFTheme.Spacing.l + keyboardObserver.keyboardHeight)
             }
+            .accessibilityIdentifier("level_scroll_view")
             .onChange(of: graphVM.nodes.count) { _ in
                 withAnimation(.spring(response: 0.45, dampingFraction: 0.85)) {
                     proxy.scrollTo(pipelineAnchor, anchor: .bottom)
@@ -518,6 +520,7 @@ struct LevelPlayView: View {
         .padding(.horizontal, HFTheme.Spacing.m)
         .padding(.vertical, HFTheme.Spacing.s)
         .background(HFTheme.Colors.bgPanelSoft.opacity(0.95))
+        .accessibilityIdentifier("pipeline_header")
     }
 
     private func pipelineMetric(title: String, value: String) -> some View {
