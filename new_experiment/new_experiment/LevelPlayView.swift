@@ -327,7 +327,13 @@ struct LevelPlayView: View {
 
     private var isUITestMode: Bool {
         let env = ProcessInfo.processInfo.environment
-        return env["UITEST_MODE"] == "1" || env["XCTestConfigurationFilePath"] != nil
+        if env["UITEST_MODE"] == "1" || env["UITEST_OVERLAY"] == "1" {
+            return true
+        }
+        if env["XCTestConfigurationFilePath"] != nil {
+            return true
+        }
+        return ProcessInfo.processInfo.arguments.contains("UITEST_MODE")
     }
 
     private var uitestOverlay: some View {
