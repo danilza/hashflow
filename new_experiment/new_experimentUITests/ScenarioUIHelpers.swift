@@ -1,3 +1,4 @@
+import CoreGraphics
 import Foundation
 import XCTest
 
@@ -125,24 +126,23 @@ func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
     }
     let scrollView = app.scrollViews["level_scroll_view"].exists ? app.scrollViews["level_scroll_view"] : app.scrollViews.firstMatch
     if scrollView.exists {
-        if scrollView.isHittable, scrollView.frame.height > 1 {
-            for _ in 0..<6 {
-                scrollView.swipeDown()
-                if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
-            }
-            for _ in 0..<6 {
-                scrollView.swipeUp()
-                if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
-            }
+        if tryDrag(scrollView, start: CGVector(dx: 0.5, dy: 0.2), end: CGVector(dx: 0.5, dy: 0.8)) {
+            if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
+        }
+        if tryDrag(scrollView, start: CGVector(dx: 0.5, dy: 0.8), end: CGVector(dx: 0.5, dy: 0.2)) {
+            if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
         }
     }
-    for _ in 0..<4 {
-        app.swipeDown()
-        if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
-    }
-    for _ in 0..<4 {
-        app.swipeUp()
-        if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
+    let window = app.windows.firstMatch
+    if window.exists {
+        for _ in 0..<4 {
+            _ = tryDrag(window, start: CGVector(dx: 0.5, dy: 0.2), end: CGVector(dx: 0.5, dy: 0.8))
+            if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
+        }
+        for _ in 0..<4 {
+            _ = tryDrag(window, start: CGVector(dx: 0.5, dy: 0.8), end: CGVector(dx: 0.5, dy: 0.2))
+            if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
+        }
     }
     return addShift.exists && addShift.isHittable
 }
@@ -215,6 +215,14 @@ private func waitForHittable(_ element: XCUIElement, timeout: TimeInterval) -> B
         RunLoop.current.run(until: Date().addingTimeInterval(0.2))
     }
     return element.exists && element.isHittable
+}
+
+private func tryDrag(_ element: XCUIElement, start: CGVector, end: CGVector) -> Bool {
+    guard element.exists else { return false }
+    let startCoord = element.coordinate(withNormalizedOffset: start)
+    let endCoord = element.coordinate(withNormalizedOffset: end)
+    startCoord.press(forDuration: 0.05, thenDragTo: endCoord)
+    return true
 }
 
 private func elementState(_ element: XCUIElement, name: String) -> String {
