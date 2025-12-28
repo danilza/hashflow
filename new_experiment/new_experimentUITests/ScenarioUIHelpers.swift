@@ -4,13 +4,14 @@ import XCTest
 struct OpenLevelResult {
     let success: Bool
     let failureReason: String?
+    let debugSummary: String?
 
     static func ok() -> OpenLevelResult {
-        OpenLevelResult(success: true, failureReason: nil)
+        OpenLevelResult(success: true, failureReason: nil, debugSummary: nil)
     }
 
-    static func fail(_ reason: String) -> OpenLevelResult {
-        OpenLevelResult(success: false, failureReason: reason)
+    static func fail(_ reason: String, debug: String? = nil) -> OpenLevelResult {
+        OpenLevelResult(success: false, failureReason: reason, debugSummary: debug)
     }
 }
 
@@ -21,13 +22,13 @@ func dismissIntroIfNeeded(_ app: XCUIApplication) {
     }
 }
 
-func openFirstLevel(_ app: XCUIApplication) -> OpenLevelResult {
+func openFirstLevel(_ app: XCUIApplication, testCase: XCTestCase? = nil) -> OpenLevelResult {
     if !tapAnyElement(app, [
         app.buttons["menu_start_hacking"],
         app.otherElements["menu_start_hacking"],
         app.staticTexts["START HACKING"]
     ], timeout: 20) {
-        return .fail("menu_start_hacking not found or not tappable")
+        return .fail("menu_start_hacking not found or not tappable", debug: levelDebugSummary(app))
     }
 
     if !waitForAny([
@@ -35,7 +36,7 @@ func openFirstLevel(_ app: XCUIApplication) -> OpenLevelResult {
         app.staticTexts["УРОВНИ"],
         app.buttons["difficulty_easy"]
     ], timeout: 10) {
-        return .fail("level list view not visible after START HACKING")
+        return .fail("level list view not visible after START HACKING", debug: levelDebugSummary(app))
     }
 
     if !tapAnyElement(app, [
@@ -43,14 +44,14 @@ func openFirstLevel(_ app: XCUIApplication) -> OpenLevelResult {
         app.otherElements["difficulty_easy"],
         app.staticTexts["ОБУЧАЮЩИЕ"]
     ], timeout: 10) {
-        return .fail("difficulty_easy not found or not tappable")
+        return .fail("difficulty_easy not found or not tappable", debug: levelDebugSummary(app))
     }
 
     if !waitForAny([
         app.otherElements["level_difficulty_list_view"],
         app.navigationBars["Обучающие"]
     ], timeout: 10) {
-        return .fail("difficulty list view not visible after choosing easy")
+        return .fail("difficulty list view not visible after choosing easy", debug: levelDebugSummary(app))
     }
 
     if !tapAnyElement(app, [
@@ -58,7 +59,7 @@ func openFirstLevel(_ app: XCUIApplication) -> OpenLevelResult {
         app.otherElements["level_row_1"],
         app.staticTexts["Базовый уровень #1"]
     ], timeout: 10) {
-        return .fail("level_row_1 not found or not tappable")
+        return .fail("level_row_1 not found or not tappable", debug: levelDebugSummary(app))
     }
 
     if !waitForAny([
@@ -66,19 +67,23 @@ func openFirstLevel(_ app: XCUIApplication) -> OpenLevelResult {
         app.otherElements["info_panel"],
         app.buttons["run_button"]
     ], timeout: 10) {
-        return .fail("level_play_view not visible after level tap")
+        captureScreenshot(app, testCase: testCase, name: "open-level-no-level-view")
+        return .fail("level_play_view not visible after level tap", debug: levelDebugSummary(app))
     }
 
     if !ensurePipelineControlsVisible(app) {
         let header = elementById(app, "pipeline_header")
         if header.exists {
-            return .fail("pipeline_header visible but controls not hittable")
+            captureScreenshot(app, testCase: testCase, name: "pipeline-header-visible-no-controls")
+            return .fail("pipeline_header visible but controls not hittable", debug: levelDebugSummary(app))
         }
-        return .fail("pipeline controls not visible")
+        captureScreenshot(app, testCase: testCase, name: "pipeline-controls-missing")
+        return .fail("pipeline controls not visible", debug: levelDebugSummary(app))
     }
     let runButton = app.buttons["run_button"]
     if !runButton.waitForExistence(timeout: 10) {
-        return .fail("run_button missing")
+        captureScreenshot(app, testCase: testCase, name: "run-button-missing")
+        return .fail("run_button missing", debug: levelDebugSummary(app))
     }
     return .ok()
 }
@@ -186,6 +191,34 @@ private func elementById(_ app: XCUIApplication, _ id: String) -> XCUIElement {
 
 func tapById(_ app: XCUIApplication, id: String, timeout: TimeInterval = 5) -> Bool {
     tapElement(app, elementById(app, id), timeout: timeout)
+}
+
+private func elementState(_ element: XCUIElement, name: String) -> String {
+    let exists = element.exists ? "1" : "0"
+    let hittable = element.isHittable ? "1" : "0"
+    let enabled = element.isEnabled ? "1" : "0"
+    return "\(name)=exists:\(exists),hittable:\(hittable),enabled:\(enabled)"
+}
+
+private func levelDebugSummary(_ app: XCUIApplication) -> String {
+    let parts = [
+        elementState(elementById(app, "level_play_view"), name: "level_play_view"),
+        elementState(elementById(app, "info_panel"), name: "info_panel"),
+        elementState(elementById(app, "run_button"), name: "run_button"),
+        elementState(elementById(app, "pipeline_header"), name: "pipeline_header"),
+        elementState(elementById(app, "pipeline_add_shift"), name: "pipeline_add_shift"),
+        elementState(elementById(app, "level_scroll_view"), name: "level_scroll_view")
+    ]
+    return parts.joined(separator: " | ")
+}
+
+private func captureScreenshot(_ app: XCUIApplication, testCase: XCTestCase?, name: String) {
+    guard let testCase else { return }
+    let shot = XCUIScreen.main.screenshot()
+    let attachment = XCTAttachment(screenshot: shot)
+    attachment.name = name
+    attachment.lifetime = .keepAlways
+    testCase.add(attachment)
 }
 
 func clearAndType(field: XCUIElement, value: String) {

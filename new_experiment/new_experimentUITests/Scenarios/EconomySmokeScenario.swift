@@ -53,13 +53,13 @@ final class EconomySmokeScenario: XCTestCase {
         logger.success(step: step3, description: "Read initial economy state")
 
         let step4 = logger.reserveStep()
-        let openResult = openFirstLevel(app)
+        let openResult = openFirstLevel(app, testCase: self)
         if !openResult.success {
             logger.fail(
                 step: step4,
                 description: "Open first level",
                 expected: "Level screen opened",
-                actual: openResult.failureReason ?? "Level screen missing"
+                actual: [openResult.failureReason, openResult.debugSummary].compactMap { $0 }.joined(separator: " | ")
             )
             return
         }
