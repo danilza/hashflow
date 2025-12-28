@@ -63,9 +63,9 @@ func openFirstLevel(_ app: XCUIApplication, testCase: XCTestCase? = nil) -> Open
     }
 
     if !waitForAny([
-        app.otherElements["level_play_view"],
         app.otherElements["info_panel"],
-        app.buttons["run_button"]
+        app.buttons["run_button"],
+        app.otherElements["pipeline_section"]
     ], timeout: 10) {
         captureScreenshot(app, testCase: testCase, name: "open-level-no-level-view")
         return .fail("level_play_view not visible after level tap", debug: levelDebugSummary(app))
@@ -186,7 +186,7 @@ private func waitForAny(_ elements: [XCUIElement], timeout: TimeInterval) -> Boo
 }
 
 private func elementById(_ app: XCUIApplication, _ id: String) -> XCUIElement {
-    app.descendants(matching: .any)[id]
+    app.descendants(matching: .any).matching(identifier: id).firstMatch
 }
 
 func tapById(_ app: XCUIApplication, id: String, timeout: TimeInterval = 5) -> Bool {
@@ -202,12 +202,12 @@ private func elementState(_ element: XCUIElement, name: String) -> String {
 
 private func levelDebugSummary(_ app: XCUIApplication) -> String {
     let parts = [
-        elementState(elementById(app, "level_play_view"), name: "level_play_view"),
         elementState(elementById(app, "info_panel"), name: "info_panel"),
         elementState(elementById(app, "run_button"), name: "run_button"),
         elementState(elementById(app, "pipeline_header"), name: "pipeline_header"),
         elementState(elementById(app, "pipeline_add_shift"), name: "pipeline_add_shift"),
-        elementState(elementById(app, "level_scroll_view"), name: "level_scroll_view")
+        elementState(elementById(app, "level_scroll_view"), name: "level_scroll_view"),
+        elementState(elementById(app, "pipeline_section"), name: "pipeline_section")
     ]
     return parts.joined(separator: " | ")
 }
