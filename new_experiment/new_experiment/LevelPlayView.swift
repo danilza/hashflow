@@ -330,6 +330,9 @@ struct LevelPlayView: View {
         if env["UITEST_MODE"] == "1" || env["UITEST_OVERLAY"] == "1" {
             return true
         }
+        if env.keys.contains(where: { $0.hasPrefix("UITEST_") }) {
+            return true
+        }
         if env["XCTestConfigurationFilePath"] != nil {
             return true
         }
