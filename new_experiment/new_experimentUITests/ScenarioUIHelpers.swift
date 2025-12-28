@@ -1,6 +1,41 @@
 import CoreGraphics
+import CryptoKit
 import Foundation
 import XCTest
+
+struct UITestPipelineParams {
+    let shift: Int
+    let mask: UInt32
+    let hash: String
+}
+
+func makeUITestPipelineParams(seed: String) -> UITestPipelineParams {
+    let input: UInt32 = 47
+    let target: UInt32 = 224
+    let shift = (abs(seed.hashValue) % 8) + 1
+    let mask = target ^ (input << shift)
+    let hash = pipelineHash(shift: shift, mask: mask)
+    return UITestPipelineParams(shift: shift, mask: mask, hash: hash)
+}
+
+private func pipelineHash(shift: Int, mask: UInt32) -> String {
+    struct Operation: Codable {
+        let op: String
+        let value: UInt32
+    }
+    struct Payload: Codable {
+        let operations: [Operation]
+    }
+    let payload = Payload(operations: [
+        Operation(op: "shift_left", value: UInt32(shift)),
+        Operation(op: "xor", value: mask)
+    ])
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = [.sortedKeys]
+    let data = (try? encoder.encode(payload)) ?? Data()
+    let digest = SHA256.hash(data: data)
+    return digest.map { String(format: "%02x", $0) }.joined()
+}
 
 struct OpenLevelResult {
     let success: Bool

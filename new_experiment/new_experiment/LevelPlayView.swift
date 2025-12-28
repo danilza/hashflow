@@ -1400,9 +1400,12 @@ struct LevelPlayView: View {
     }
 
     private func applyUITestPipeline() {
+        let env = ProcessInfo.processInfo.environment
+        let shift = Int(env["UITEST_PIPELINE_SHIFT"] ?? "") ?? 2
+        let mask = UInt32(env["UITEST_PIPELINE_MASK"] ?? "") ?? 92
         graphVM.nodes = [
-            HashNode(type: .shiftLeft, shiftBy: 2),
-            HashNode(type: .xor, mask: 92)
+            HashNode(type: .shiftLeft, shiftBy: shift),
+            HashNode(type: .xor, mask: mask)
         ]
         graphVM.result = nil
         graphVM.isSuccess = nil

@@ -23,12 +23,15 @@ final class CoreLoopScenario: XCTestCase {
         }
         logger.success(step: step0, description: "Prepare test user")
 
+        let params = makeUITestPipelineParams(seed: user.id)
         let app = XCUIApplication()
         app.launchArguments.append("UITEST_MODE")
         app.launchEnvironment["UITEST_MODE"] = "1"
         app.launchEnvironment["UITEST_OVERLAY"] = "1"
         app.launchEnvironment["UITEST_AUTO_PIPELINE"] = "1"
-        app.launchEnvironment["UITEST_PIPELINE"] = "shift2xor92"
+        app.launchEnvironment["UITEST_PIPELINE"] = "custom"
+        app.launchEnvironment["UITEST_PIPELINE_SHIFT"] = "\(params.shift)"
+        app.launchEnvironment["UITEST_PIPELINE_MASK"] = "\(params.mask)"
         app.launchEnvironment["UITEST_AUTO_RUNS"] = "1"
         app.launchEnvironment["UITEST_AUTO_RUN_DELAY"] = "4"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
@@ -113,7 +116,7 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step8, description: "record_unique_solution_v1 == true")
 
         let step9 = logger.reserveStep()
-        let pipelineHash = levelOnePipelineHash()
+        let pipelineHash = params.hash
         let count: Int
         do {
             count = try await factory.uniquePipelineCount(pipelineHash: pipelineHash)
@@ -142,23 +145,4 @@ private func configureLevelOnePipeline(_ app: XCUIApplication) -> Bool {
     clearAndType(field: shiftField, value: "2")
     clearAndType(field: maskField, value: "92")
     return true
-}
-
-private func levelOnePipelineHash() -> String {
-    struct Operation: Codable {
-        let op: String
-        let value: UInt32
-    }
-    struct Payload: Codable {
-        let operations: [Operation]
-    }
-    let payload = Payload(operations: [
-        Operation(op: "shift_left", value: 2),
-        Operation(op: "xor", value: 92)
-    ])
-    let encoder = JSONEncoder()
-    encoder.outputFormatting = [.sortedKeys]
-    let data = (try? encoder.encode(payload)) ?? Data()
-    let digest = SHA256.hash(data: data)
-    return digest.map { String(format: "%02x", $0) }.joined()
 }

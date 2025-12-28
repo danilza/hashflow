@@ -22,12 +22,15 @@ final class EconomySmokeScenario: XCTestCase {
         }
         logger.success(step: step0, description: "Prepare test user")
 
+        let params = makeUITestPipelineParams(seed: user.id)
         let app = XCUIApplication()
         app.launchArguments.append("UITEST_MODE")
         app.launchEnvironment["UITEST_MODE"] = "1"
         app.launchEnvironment["UITEST_OVERLAY"] = "1"
         app.launchEnvironment["UITEST_AUTO_PIPELINE"] = "1"
-        app.launchEnvironment["UITEST_PIPELINE"] = "shift2xor92"
+        app.launchEnvironment["UITEST_PIPELINE"] = "custom"
+        app.launchEnvironment["UITEST_PIPELINE_SHIFT"] = "\(params.shift)"
+        app.launchEnvironment["UITEST_PIPELINE_MASK"] = "\(params.mask)"
         app.launchEnvironment["UITEST_AUTO_RUNS"] = "1"
         app.launchEnvironment["UITEST_AUTO_RUN_DELAY"] = "4"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
