@@ -14,7 +14,7 @@ func makeUITestPipelineParams(seed: String) -> UITestPipelineParams {
     let input: UInt32 = 47
     let target: UInt32 = 224
     let shift = (abs(seed.hashValue) % 8) + 1
-    let seedMask = UInt32(bitPattern: Int32(seed.hashValue)) | 0x1
+    let seedMask = UInt32(truncatingIfNeeded: seed.hashValue) | 0x1
     let mask1 = seedMask
     let mask2 = target ^ (input << shift) ^ mask1
     let hash = pipelineHash(shift: shift, mask1: mask1, mask2: mask2)

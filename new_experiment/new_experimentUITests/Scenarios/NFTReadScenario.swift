@@ -23,7 +23,9 @@ final class NFTReadScenario: XCTestCase {
         logger.success(step: step0, description: "Prepare test user")
 
         let app = XCUIApplication()
+        app.launchArguments.append("UITEST_MODE")
         app.launchEnvironment["UITEST_MODE"] = "1"
+        app.launchEnvironment["UITEST_OVERLAY"] = "1"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
         app.launchEnvironment["UITEST_SUPABASE_ANON_KEY"] = env.anonKey
         app.launchEnvironment["UITEST_SERVICE_KEY"] = env.serviceKey
