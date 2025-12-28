@@ -326,7 +326,8 @@ struct LevelPlayView: View {
     }
 
     private var isUITestMode: Bool {
-        ProcessInfo.processInfo.environment["UITEST_MODE"] == "1"
+        let env = ProcessInfo.processInfo.environment
+        return env["UITEST_MODE"] == "1" || env["XCTestConfigurationFilePath"] != nil
     }
 
     private var uitestOverlay: some View {
@@ -346,6 +347,8 @@ struct LevelPlayView: View {
         .cornerRadius(8)
         .padding(.top, 8)
         .padding(.trailing, 8)
+        .accessibilityIdentifier("uitest_overlay")
+        .accessibilityElement(children: .contain)
     }
 
     private var scrollStackContent: some View {

@@ -151,7 +151,7 @@ private func tapElement(_ app: XCUIApplication, _ element: XCUIElement, timeout:
 
 private func scrollToMakeHittable(_ app: XCUIApplication, _ element: XCUIElement) -> Bool {
     let scrollView = app.scrollViews.firstMatch
-    if scrollView.exists {
+    if scrollView.exists, scrollView.frame.height > 1, scrollView.frame.width > 1 {
         for _ in 0..<6 {
             if element.isHittable { return true }
             scrollView.swipeUp()
@@ -188,11 +188,21 @@ func tapById(_ app: XCUIApplication, id: String, timeout: TimeInterval = 5) -> B
 }
 
 func tapUITestPipeline(_ app: XCUIApplication) -> Bool {
-    tapById(app, id: "uitest_set_pipeline", timeout: 5)
+    if tapById(app, id: "uitest_set_pipeline", timeout: 5) { return true }
+    return tapAnyElement(app, [
+        app.buttons["SET PIPELINE"],
+        app.staticTexts["SET PIPELINE"],
+        app.otherElements["uitest_overlay"]
+    ], timeout: 3)
 }
 
 func tapUITestRun(_ app: XCUIApplication) -> Bool {
-    tapById(app, id: "uitest_run_pipeline", timeout: 5)
+    if tapById(app, id: "uitest_run_pipeline", timeout: 5) { return true }
+    return tapAnyElement(app, [
+        app.buttons["RUN PIPELINE"],
+        app.staticTexts["RUN PIPELINE"],
+        app.otherElements["uitest_overlay"]
+    ], timeout: 3)
 }
 
 private func waitForHittable(_ element: XCUIElement, timeout: TimeInterval) -> Bool {
