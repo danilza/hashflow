@@ -26,6 +26,10 @@ final class EconomySmokeScenario: XCTestCase {
         app.launchArguments.append("UITEST_MODE")
         app.launchEnvironment["UITEST_MODE"] = "1"
         app.launchEnvironment["UITEST_OVERLAY"] = "1"
+        app.launchEnvironment["UITEST_AUTO_PIPELINE"] = "1"
+        app.launchEnvironment["UITEST_PIPELINE"] = "shift2xor92"
+        app.launchEnvironment["UITEST_AUTO_RUNS"] = "1"
+        app.launchEnvironment["UITEST_AUTO_RUN_DELAY"] = "4"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
         app.launchEnvironment["UITEST_SUPABASE_ANON_KEY"] = env.anonKey
         app.launchEnvironment["UITEST_SERVICE_KEY"] = env.serviceKey
@@ -68,12 +72,14 @@ final class EconomySmokeScenario: XCTestCase {
         logger.success(step: step4, description: "Open first level")
 
         let step5 = logger.reserveStep()
-        if !tapUITestPipeline(app) {
-            logger.fail(step: step5, description: "Perform one run", expected: "UITEST pipeline applied", actual: "uitest_set_pipeline missing")
+        let pipelineReady = app.otherElements["uitest_pipeline_ready"]
+        if !pipelineReady.waitForExistence(timeout: 20) {
+            logger.fail(step: step5, description: "Perform one run", expected: "uitest_pipeline_ready", actual: "pipeline not applied")
             return
         }
-        if !tapUITestRun(app) {
-            logger.fail(step: step5, description: "Perform one run", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
+        let successText = app.staticTexts["Уникальное решение!"]
+        if !successText.waitForExistence(timeout: 40) {
+            logger.fail(step: step5, description: "Perform one run", expected: "Success overlay", actual: "Unique solution overlay missing")
             return
         }
         logger.success(step: step5, description: "Perform one run")

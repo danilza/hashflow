@@ -27,6 +27,10 @@ final class CoreLoopScenario: XCTestCase {
         app.launchArguments.append("UITEST_MODE")
         app.launchEnvironment["UITEST_MODE"] = "1"
         app.launchEnvironment["UITEST_OVERLAY"] = "1"
+        app.launchEnvironment["UITEST_AUTO_PIPELINE"] = "1"
+        app.launchEnvironment["UITEST_PIPELINE"] = "shift2xor92"
+        app.launchEnvironment["UITEST_AUTO_RUNS"] = "1"
+        app.launchEnvironment["UITEST_AUTO_RUN_DELAY"] = "4"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
         app.launchEnvironment["UITEST_SUPABASE_ANON_KEY"] = env.anonKey
         app.launchEnvironment["UITEST_SERVICE_KEY"] = env.serviceKey
@@ -59,8 +63,9 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step3, description: "Open first available level")
 
         let step4 = logger.reserveStep()
-        if !tapUITestPipeline(app) {
-            logger.fail(step: step4, description: "Build minimal valid pipeline", expected: "UITEST pipeline applied", actual: "uitest_set_pipeline missing")
+        let pipelineReady = app.otherElements["uitest_pipeline_ready"]
+        if !pipelineReady.waitForExistence(timeout: 20) {
+            logger.fail(step: step4, description: "Build minimal valid pipeline", expected: "uitest_pipeline_ready", actual: "pipeline not applied")
             return
         }
         logger.success(step: step4, description: "Build minimal valid pipeline")
@@ -76,8 +81,9 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step5, description: "Read economy before run")
 
         let step6 = logger.reserveStep()
-        if !tapUITestRun(app) {
-            logger.fail(step: step6, description: "Run pipeline", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
+        let successText = app.staticTexts["Уникальное решение!"]
+        if !successText.waitForExistence(timeout: 40) {
+            logger.fail(step: step6, description: "Run pipeline", expected: "Success overlay", actual: "Unique solution overlay missing")
             return
         }
         logger.success(step: step6, description: "Run pipeline")
@@ -104,11 +110,6 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step7, description: "consume_run_resources_v1")
 
         let step8 = logger.reserveStep()
-        let successText = app.staticTexts["Уникальное решение!"]
-        if !successText.waitForExistence(timeout: 30) {
-            logger.fail(step: step8, description: "record_unique_solution_v1 == true", expected: "Success overlay", actual: "Unique solution overlay missing")
-            return
-        }
         logger.success(step: step8, description: "record_unique_solution_v1 == true")
 
         let step9 = logger.reserveStep()

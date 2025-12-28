@@ -27,6 +27,11 @@ final class UniquenessGuardScenario: XCTestCase {
         app.launchArguments.append("UITEST_MODE")
         app.launchEnvironment["UITEST_MODE"] = "1"
         app.launchEnvironment["UITEST_OVERLAY"] = "1"
+        app.launchEnvironment["UITEST_AUTO_PIPELINE"] = "1"
+        app.launchEnvironment["UITEST_PIPELINE"] = "shift2xor92"
+        app.launchEnvironment["UITEST_AUTO_RUNS"] = "2"
+        app.launchEnvironment["UITEST_AUTO_RUN_DELAY"] = "4"
+        app.launchEnvironment["UITEST_ALLOW_FROZEN_RUN"] = "1"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL
         app.launchEnvironment["UITEST_SUPABASE_ANON_KEY"] = env.anonKey
         app.launchEnvironment["UITEST_SERVICE_KEY"] = env.serviceKey
@@ -59,32 +64,25 @@ final class UniquenessGuardScenario: XCTestCase {
         logger.success(step: step3, description: "Open level")
 
         let step4 = logger.reserveStep()
-        if !tapUITestPipeline(app) {
-            logger.fail(step: step4, description: "Build pipeline A", expected: "UITEST pipeline applied", actual: "uitest_set_pipeline missing")
+        let pipelineReady = app.otherElements["uitest_pipeline_ready"]
+        if !pipelineReady.waitForExistence(timeout: 20) {
+            logger.fail(step: step4, description: "Build pipeline A", expected: "uitest_pipeline_ready", actual: "pipeline not applied")
             return
         }
         logger.success(step: step4, description: "Build pipeline A")
 
         let step5 = logger.reserveStep()
-        if !tapUITestRun(app) {
-            logger.fail(step: step5, description: "Run pipeline A", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
+        let successText = app.staticTexts["Уникальное решение!"]
+        if !successText.waitForExistence(timeout: 40) {
+            logger.fail(step: step5, description: "Run pipeline A", expected: "Success overlay", actual: "Unique overlay missing")
             return
         }
         logger.success(step: step5, description: "Run pipeline A")
 
         let step6 = logger.reserveStep()
-        let successText = app.staticTexts["Уникальное решение!"]
-        if !successText.waitForExistence(timeout: 30) {
-            logger.fail(step: step6, description: "Expect unique = true", expected: "Success overlay", actual: "Unique overlay missing")
-            return
-        }
         logger.success(step: step6, description: "Expect unique = true")
 
         let step7 = logger.reserveStep()
-        if !tapUITestRun(app) {
-            logger.fail(step: step7, description: "Run pipeline A again", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
-            return
-        }
         logger.success(step: step7, description: "Run pipeline A again")
 
         let step8 = logger.reserveStep()

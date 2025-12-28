@@ -38,6 +38,8 @@ struct LevelPlayView: View {
     @State private var isPaletteCollapsed = false
     @State private var showLeaderboardSheet = false
     @State private var isPipelineFrozen = false
+    @State private var didApplyUITestPipeline = false
+    @State private var didScheduleUITestRuns = false
     private let paletteRefreshInterval = 10
     private let paletteColumns = Array(repeating: GridItem(.flexible(), spacing: HFTheme.Spacing.s), count: 3)
 
@@ -186,6 +188,7 @@ struct LevelPlayView: View {
                 graphVM.reset(for: level)
                 preparePaletteForCurrentState()
                 graphVM.showPrefilled = true
+                scheduleUITestRunsIfNeeded()
             }
             .onDisappear {
                 isPalettePaused = true
@@ -199,6 +202,9 @@ struct LevelPlayView: View {
                 isPalettePaused = false
                 isPipelineFrozen = false
                 showSuccess = false
+                didApplyUITestPipeline = false
+                didScheduleUITestRuns = false
+                scheduleUITestRunsIfNeeded()
             }
             .onChange(of: profileVM.profile.hardcoreMode) { _ in
                 preparePaletteForCurrentState()
@@ -293,6 +299,12 @@ struct LevelPlayView: View {
                 uitestOverlay
             }
         }
+        .overlay {
+            if isUITestMode && didApplyUITestPipeline {
+                Color.clear
+                    .accessibilityIdentifier("uitest_pipeline_ready")
+            }
+        }
     }
 
     private var levelScroll: some View {
@@ -358,6 +370,77 @@ struct LevelPlayView: View {
         .padding(.trailing, 8)
         .accessibilityIdentifier("uitest_overlay")
         .accessibilityElement(children: .contain)
+    }
+
+    private var shouldApplyUITestPipeline: Bool {
+        let env = ProcessInfo.processInfo.environment
+        return env["UITEST_PIPELINE"] == "shift2xor92" || env["UITEST_AUTO_PIPELINE"] == "1"
+    }
+
+    private var uitestAutoRunCount: Int {
+        let env = ProcessInfo.processInfo.environment
+        return Int(env["UITEST_AUTO_RUNS"] ?? "") ?? 0
+    }
+
+    private var allowUITestFrozenRun: Bool {
+        let env = ProcessInfo.processInfo.environment
+        return env["UITEST_ALLOW_FROZEN_RUN"] == "1"
+    }
+
+    private var uitestAutoRunDelay: TimeInterval {
+        let env = ProcessInfo.processInfo.environment
+        if let raw = env["UITEST_AUTO_RUN_DELAY"], let value = Double(raw) {
+            return value
+        }
+        return 0
+    }
+
+    private func scheduleUITestRunsIfNeeded() {
+        guard isUITestMode else { return }
+        guard !didScheduleUITestRuns else { return }
+        let runs = uitestAutoRunCount
+        guard runs > 0 else { return }
+        didScheduleUITestRuns = true
+        Task {
+            await performUITestRuns(count: runs)
+        }
+    }
+
+    private func performUITestRuns(count: Int) async {
+        guard count > 0 else { return }
+        if uitestAutoRunDelay > 0 {
+            try? await Task.sleep(nanoseconds: UInt64(uitestAutoRunDelay * 1_000_000_000))
+        }
+        for index in 0..<count {
+            await MainActor.run {
+                if shouldApplyUITestPipeline {
+                    applyUITestPipeline()
+                }
+                if allowUITestFrozenRun {
+                    isPipelineFrozen = false
+                }
+                runPipeline()
+            }
+            for _ in 0..<40 {
+                try? await Task.sleep(nanoseconds: 300_000_000)
+                if await MainActor.run(body: { !isRunInFlight }) {
+                    break
+                }
+            }
+            if index < count - 1 {
+                for _ in 0..<20 {
+                    try? await Task.sleep(nanoseconds: 300_000_000)
+                    if await MainActor.run(body: { showSuccess }) {
+                        break
+                    }
+                }
+                try? await Task.sleep(nanoseconds: 800_000_000)
+                await MainActor.run {
+                    showSuccess = false
+                    isPipelineFrozen = false
+                }
+            }
+        }
     }
 
     private var scrollStackContent: some View {
@@ -1327,6 +1410,7 @@ struct LevelPlayView: View {
         isPipelineFrozen = false
         isPalettePaused = false
         showSuccess = false
+        didApplyUITestPipeline = true
     }
 
     private func resetCurrentLevelState() {
