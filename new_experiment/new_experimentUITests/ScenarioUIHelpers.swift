@@ -71,6 +71,9 @@ func openFirstLevel(_ app: XCUIApplication, testCase: XCTestCase? = nil) -> Open
         return .fail("level_play_view not visible after level tap", debug: levelDebugSummary(app))
     }
 
+    _ = waitForHittable(app.otherElements["info_panel"], timeout: 6)
+    _ = waitForHittable(app.buttons["run_button"], timeout: 6)
+
     if !ensurePipelineControlsVisible(app) {
         let header = elementById(app, "pipeline_header")
         if header.exists {
@@ -121,17 +124,27 @@ func ensurePipelineControlsVisible(_ app: XCUIApplication) -> Bool {
         return addShift.isHittable
     }
     let scrollView = app.scrollViews["level_scroll_view"].exists ? app.scrollViews["level_scroll_view"] : app.scrollViews.firstMatch
-    if scrollView.exists, scrollView.isHittable, scrollView.frame.height > 1 {
-        for _ in 0..<8 {
-            scrollView.swipeUp()
-            if addShift.waitForExistence(timeout: 1) { return true }
+    if scrollView.exists {
+        if scrollView.isHittable, scrollView.frame.height > 1 {
+            for _ in 0..<6 {
+                scrollView.swipeDown()
+                if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
+            }
+            for _ in 0..<6 {
+                scrollView.swipeUp()
+                if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
+            }
         }
     }
-    for _ in 0..<8 {
-        app.swipeUp()
-        if addShift.waitForExistence(timeout: 1) { return true }
+    for _ in 0..<4 {
+        app.swipeDown()
+        if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
     }
-    return addShift.exists
+    for _ in 0..<4 {
+        app.swipeUp()
+        if addShift.waitForExistence(timeout: 1) { return addShift.isHittable }
+    }
+    return addShift.exists && addShift.isHittable
 }
 
 private func tapAnyElement(_ app: XCUIApplication, _ elements: [XCUIElement], timeout: TimeInterval) -> Bool {
@@ -191,6 +204,17 @@ private func elementById(_ app: XCUIApplication, _ id: String) -> XCUIElement {
 
 func tapById(_ app: XCUIApplication, id: String, timeout: TimeInterval = 5) -> Bool {
     tapElement(app, elementById(app, id), timeout: timeout)
+}
+
+private func waitForHittable(_ element: XCUIElement, timeout: TimeInterval) -> Bool {
+    let deadline = Date().addingTimeInterval(timeout)
+    while Date() < deadline {
+        if element.exists && element.isHittable {
+            return true
+        }
+        RunLoop.current.run(until: Date().addingTimeInterval(0.2))
+    }
+    return element.exists && element.isHittable
 }
 
 private func elementState(_ element: XCUIElement, name: String) -> String {
