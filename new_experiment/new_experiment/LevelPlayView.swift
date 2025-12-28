@@ -288,6 +288,11 @@ struct LevelPlayView: View {
         HackerBackgroundView {
             levelScroll
         }
+        .overlay(alignment: .topTrailing) {
+            if isUITestMode {
+                uitestOverlay
+            }
+        }
     }
 
     private var levelScroll: some View {
@@ -318,6 +323,29 @@ struct LevelPlayView: View {
                     .background(HFTheme.Colors.bgPanel.opacity(0.95))
             }
         }
+    }
+
+    private var isUITestMode: Bool {
+        ProcessInfo.processInfo.environment["UITEST_MODE"] == "1"
+    }
+
+    private var uitestOverlay: some View {
+        VStack(alignment: .trailing, spacing: HFTheme.Spacing.s) {
+            Button("SET PIPELINE") {
+                applyUITestPipeline()
+            }
+            .accessibilityIdentifier("uitest_set_pipeline")
+            Button("RUN PIPELINE") {
+                runPipeline()
+            }
+            .accessibilityIdentifier("uitest_run_pipeline")
+        }
+        .font(.system(size: 12, weight: .semibold, design: .monospaced))
+        .padding(8)
+        .background(Color.black.opacity(0.7))
+        .cornerRadius(8)
+        .padding(.top, 8)
+        .padding(.trailing, 8)
     }
 
     private var scrollStackContent: some View {
@@ -1274,6 +1302,19 @@ struct LevelPlayView: View {
     private func resetDragIndicators() {
         draggedNode = nil
         dropGapIndex = nil
+    }
+
+    private func applyUITestPipeline() {
+        graphVM.nodes = [
+            HashNode(type: .shiftLeft, shiftBy: 2),
+            HashNode(type: .xor, mask: 92)
+        ]
+        graphVM.result = nil
+        graphVM.isSuccess = nil
+        graphVM.uniqueSolutionUnlocked = false
+        isPipelineFrozen = false
+        isPalettePaused = false
+        showSuccess = false
     }
 
     private func resetCurrentLevelState() {

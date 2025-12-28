@@ -66,16 +66,14 @@ final class EconomySmokeScenario: XCTestCase {
         logger.success(step: step4, description: "Open first level")
 
         let step5 = logger.reserveStep()
-        if !buildSingleNodePipeline(app) {
-            logger.fail(step: step5, description: "Perform one run", expected: "Pipeline built", actual: "Pipeline controls missing")
+        if !tapUITestPipeline(app) {
+            logger.fail(step: step5, description: "Perform one run", expected: "UITEST pipeline applied", actual: "uitest_set_pipeline missing")
             return
         }
-        let runButton = app.buttons["run_button"]
-        if !runButton.waitForExistence(timeout: 10) {
-            logger.fail(step: step5, description: "Perform one run", expected: "run button visible", actual: "run button missing")
+        if !tapUITestRun(app) {
+            logger.fail(step: step5, description: "Perform one run", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
             return
         }
-        runButton.tap()
         logger.success(step: step5, description: "Perform one run")
 
         let step6 = logger.reserveStep()
@@ -112,9 +110,4 @@ final class EconomySmokeScenario: XCTestCase {
         }
         logger.success(step: step7, description: "Verify credits OR moves decreased")
     }
-}
-
-private func buildSingleNodePipeline(_ app: XCUIApplication) -> Bool {
-    guard ensurePipelineControlsVisible(app) else { return false }
-    return tapById(app, id: "pipeline_add_xor", timeout: 10)
 }

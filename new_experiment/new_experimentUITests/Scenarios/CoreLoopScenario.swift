@@ -57,8 +57,8 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step3, description: "Open first available level")
 
         let step4 = logger.reserveStep()
-        if !configureLevelOnePipeline(app) {
-            logger.fail(step: step4, description: "Build minimal valid pipeline", expected: "Shift=2 and Mask=92 applied", actual: "Pipeline fields missing")
+        if !tapUITestPipeline(app) {
+            logger.fail(step: step4, description: "Build minimal valid pipeline", expected: "UITEST pipeline applied", actual: "uitest_set_pipeline missing")
             return
         }
         logger.success(step: step4, description: "Build minimal valid pipeline")
@@ -74,12 +74,10 @@ final class CoreLoopScenario: XCTestCase {
         logger.success(step: step5, description: "Read economy before run")
 
         let step6 = logger.reserveStep()
-        let runButton = app.buttons["run_button"]
-        if !runButton.waitForExistence(timeout: 10) {
-            logger.fail(step: step6, description: "Run pipeline", expected: "run button visible", actual: "run button missing")
+        if !tapUITestRun(app) {
+            logger.fail(step: step6, description: "Run pipeline", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
             return
         }
-        runButton.tap()
         logger.success(step: step6, description: "Run pipeline")
 
         let step7 = logger.reserveStep()

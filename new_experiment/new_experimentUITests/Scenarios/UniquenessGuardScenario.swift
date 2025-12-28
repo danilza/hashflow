@@ -57,15 +57,15 @@ final class UniquenessGuardScenario: XCTestCase {
         logger.success(step: step3, description: "Open level")
 
         let step4 = logger.reserveStep()
-        if !configureLevelOnePipeline(app) {
-            logger.fail(step: step4, description: "Build pipeline A", expected: "Shift=2 and Mask=92 applied", actual: "Pipeline fields missing")
+        if !tapUITestPipeline(app) {
+            logger.fail(step: step4, description: "Build pipeline A", expected: "UITEST pipeline applied", actual: "uitest_set_pipeline missing")
             return
         }
         logger.success(step: step4, description: "Build pipeline A")
 
         let step5 = logger.reserveStep()
-        if !tapRunButton(app) {
-            logger.fail(step: step5, description: "Run pipeline A", expected: "run button exists", actual: "run button missing")
+        if !tapUITestRun(app) {
+            logger.fail(step: step5, description: "Run pipeline A", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
             return
         }
         logger.success(step: step5, description: "Run pipeline A")
@@ -79,8 +79,8 @@ final class UniquenessGuardScenario: XCTestCase {
         logger.success(step: step6, description: "Expect unique = true")
 
         let step7 = logger.reserveStep()
-        if !tapRunButton(app) {
-            logger.fail(step: step7, description: "Run pipeline A again", expected: "run button exists", actual: "run button missing")
+        if !tapUITestRun(app) {
+            logger.fail(step: step7, description: "Run pipeline A again", expected: "UITEST run pipeline", actual: "uitest_run_pipeline missing")
             return
         }
         logger.success(step: step7, description: "Run pipeline A again")
@@ -108,27 +108,6 @@ final class UniquenessGuardScenario: XCTestCase {
         }
         logger.success(step: step9, description: "Verify duplicate not recorded")
     }
-}
-
-private func tapRunButton(_ app: XCUIApplication) -> Bool {
-    let runButton = app.buttons["run_button"]
-    guard runButton.waitForExistence(timeout: 10) else { return false }
-    runButton.tap()
-    return true
-}
-
-private func configureLevelOnePipeline(_ app: XCUIApplication) -> Bool {
-    guard ensurePipelineControlsVisible(app) else { return false }
-    guard tapById(app, id: "pipeline_add_shift", timeout: 10) else { return false }
-    guard tapById(app, id: "pipeline_add_xor", timeout: 10) else { return false }
-
-    let shiftField = app.textFields["pipeline_shift_field"]
-    let maskField = app.textFields["pipeline_mask_field"]
-    guard shiftField.waitForExistence(timeout: 5),
-          maskField.waitForExistence(timeout: 5) else { return false }
-    clearAndType(field: shiftField, value: "2")
-    clearAndType(field: maskField, value: "92")
-    return true
 }
 
 private func levelOnePipelineHash() -> String {

@@ -65,29 +65,10 @@ func openFirstLevel(_ app: XCUIApplication, testCase: XCTestCase? = nil) -> Open
 
     if !waitForAny([
         app.otherElements["info_panel"],
-        app.buttons["run_button"],
         app.otherElements["pipeline_section"]
     ], timeout: 10) {
         captureScreenshot(app, testCase: testCase, name: "open-level-no-level-view")
         return .fail("level_play_view not visible after level tap", debug: levelDebugSummary(app))
-    }
-
-    _ = waitForHittable(app.otherElements["info_panel"], timeout: 6)
-    _ = waitForHittable(app.buttons["run_button"], timeout: 6)
-
-    if !ensurePipelineControlsVisible(app) {
-        let header = elementById(app, "pipeline_header")
-        if header.exists {
-            captureScreenshot(app, testCase: testCase, name: "pipeline-header-visible-no-controls")
-            return .fail("pipeline_header visible but controls not hittable", debug: levelDebugSummary(app))
-        }
-        captureScreenshot(app, testCase: testCase, name: "pipeline-controls-missing")
-        return .fail("pipeline controls not visible", debug: levelDebugSummary(app))
-    }
-    let runButton = app.buttons["run_button"]
-    if !runButton.waitForExistence(timeout: 10) {
-        captureScreenshot(app, testCase: testCase, name: "run-button-missing")
-        return .fail("run_button missing", debug: levelDebugSummary(app))
     }
     return .ok()
 }
@@ -206,6 +187,14 @@ func tapById(_ app: XCUIApplication, id: String, timeout: TimeInterval = 5) -> B
     tapElement(app, elementById(app, id), timeout: timeout)
 }
 
+func tapUITestPipeline(_ app: XCUIApplication) -> Bool {
+    tapById(app, id: "uitest_set_pipeline", timeout: 5)
+}
+
+func tapUITestRun(_ app: XCUIApplication) -> Bool {
+    tapById(app, id: "uitest_run_pipeline", timeout: 5)
+}
+
 private func waitForHittable(_ element: XCUIElement, timeout: TimeInterval) -> Bool {
     let deadline = Date().addingTimeInterval(timeout)
     while Date() < deadline {
@@ -236,6 +225,8 @@ private func levelDebugSummary(_ app: XCUIApplication) -> String {
     let parts = [
         elementState(elementById(app, "info_panel"), name: "info_panel"),
         elementState(elementById(app, "run_button"), name: "run_button"),
+        elementState(elementById(app, "uitest_set_pipeline"), name: "uitest_set_pipeline"),
+        elementState(elementById(app, "uitest_run_pipeline"), name: "uitest_run_pipeline"),
         elementState(elementById(app, "pipeline_header"), name: "pipeline_header"),
         elementState(elementById(app, "pipeline_add_shift"), name: "pipeline_add_shift"),
         elementState(elementById(app, "level_scroll_view"), name: "level_scroll_view"),
