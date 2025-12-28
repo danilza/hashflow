@@ -29,9 +29,10 @@ final class CoreLoopScenario: XCTestCase {
         app.launchEnvironment["UITEST_MODE"] = "1"
         app.launchEnvironment["UITEST_OVERLAY"] = "1"
         app.launchEnvironment["UITEST_AUTO_PIPELINE"] = "1"
-        app.launchEnvironment["UITEST_PIPELINE"] = "custom"
+        app.launchEnvironment["UITEST_PIPELINE"] = "xor2"
         app.launchEnvironment["UITEST_PIPELINE_SHIFT"] = "\(params.shift)"
-        app.launchEnvironment["UITEST_PIPELINE_MASK"] = "\(params.mask)"
+        app.launchEnvironment["UITEST_PIPELINE_MASK1"] = "\(params.mask1)"
+        app.launchEnvironment["UITEST_PIPELINE_MASK2"] = "\(params.mask2)"
         app.launchEnvironment["UITEST_AUTO_RUNS"] = "1"
         app.launchEnvironment["UITEST_AUTO_RUN_DELAY"] = "4"
         app.launchEnvironment["UITEST_SUPABASE_URL"] = env.supabaseURL

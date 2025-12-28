@@ -1402,11 +1402,20 @@ struct LevelPlayView: View {
     private func applyUITestPipeline() {
         let env = ProcessInfo.processInfo.environment
         let shift = Int(env["UITEST_PIPELINE_SHIFT"] ?? "") ?? 2
-        let mask = UInt32(env["UITEST_PIPELINE_MASK"] ?? "") ?? 92
-        graphVM.nodes = [
-            HashNode(type: .shiftLeft, shiftBy: shift),
-            HashNode(type: .xor, mask: mask)
-        ]
+        let mask1 = UInt32(env["UITEST_PIPELINE_MASK1"] ?? "") ?? 92
+        let mask2 = UInt32(env["UITEST_PIPELINE_MASK2"] ?? "") ?? 0
+        if env["UITEST_PIPELINE"] == "xor2" {
+            graphVM.nodes = [
+                HashNode(type: .shiftLeft, shiftBy: shift),
+                HashNode(type: .xor, mask: mask1),
+                HashNode(type: .xor, mask: mask2)
+            ]
+        } else {
+            graphVM.nodes = [
+                HashNode(type: .shiftLeft, shiftBy: shift),
+                HashNode(type: .xor, mask: mask1)
+            ]
+        }
         graphVM.result = nil
         graphVM.isSuccess = nil
         graphVM.uniqueSolutionUnlocked = false

@@ -5,7 +5,8 @@ import XCTest
 
 struct UITestPipelineParams {
     let shift: Int
-    let mask: UInt32
+    let mask1: UInt32
+    let mask2: UInt32
     let hash: String
 }
 
@@ -13,12 +14,14 @@ func makeUITestPipelineParams(seed: String) -> UITestPipelineParams {
     let input: UInt32 = 47
     let target: UInt32 = 224
     let shift = (abs(seed.hashValue) % 8) + 1
-    let mask = target ^ (input << shift)
-    let hash = pipelineHash(shift: shift, mask: mask)
-    return UITestPipelineParams(shift: shift, mask: mask, hash: hash)
+    let seedMask = UInt32(bitPattern: Int32(seed.hashValue)) | 0x1
+    let mask1 = seedMask
+    let mask2 = target ^ (input << shift) ^ mask1
+    let hash = pipelineHash(shift: shift, mask1: mask1, mask2: mask2)
+    return UITestPipelineParams(shift: shift, mask1: mask1, mask2: mask2, hash: hash)
 }
 
-private func pipelineHash(shift: Int, mask: UInt32) -> String {
+private func pipelineHash(shift: Int, mask1: UInt32, mask2: UInt32) -> String {
     struct Operation: Codable {
         let op: String
         let value: UInt32
@@ -28,7 +31,8 @@ private func pipelineHash(shift: Int, mask: UInt32) -> String {
     }
     let payload = Payload(operations: [
         Operation(op: "shift_left", value: UInt32(shift)),
-        Operation(op: "xor", value: mask)
+        Operation(op: "xor", value: mask1),
+        Operation(op: "xor", value: mask2)
     ])
     let encoder = JSONEncoder()
     encoder.outputFormatting = [.sortedKeys]
